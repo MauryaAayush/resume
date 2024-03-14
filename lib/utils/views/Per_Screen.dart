@@ -148,7 +148,7 @@ class _Personal_ScreenState extends State<Personal_Screen> {
                   height: 60,
                   width: 250,
                   decoration: BoxDecoration(
-                      color: const Color(0xff009788),
+                      color: Colors.red,
                       borderRadius: BorderRadius.circular(10)
                   ),
                   child: const Center(
