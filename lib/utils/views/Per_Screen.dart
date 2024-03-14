@@ -10,8 +10,8 @@ class Personal_Screen extends StatefulWidget {
 class _Personal_ScreenState extends State<Personal_Screen> {
   @override
   Widget build(BuildContext context) {
-    double height = MediaQuery.of(context).size.height;
-    double width = MediaQuery.of(context).size.width;
+    // double height = MediaQuery.of(context).size.height;
+    // double width = MediaQuery.of(context).size.width;
 
     return SafeArea(
       child: DefaultTabController(

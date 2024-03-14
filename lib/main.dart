@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:resume/utils/views/MainScreen.dart';
-import 'package:resume/utils/views/Per_Screen.dart';
-import 'package:resume/utils/views/check.dart';
+
 
 void main() {
 
