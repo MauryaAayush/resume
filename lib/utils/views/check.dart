@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:contained_tab_bar_view/contained_tab_bar_view.dart';
 
@@ -14,46 +15,36 @@ class _Check_TabbarState extends State<Check_Tabbar> {
     return Scaffold(
       body: Center(
         child: Container(
-              color: Colors.blue,
+          padding: const EdgeInsets.all(8.0),
+          color: Colors.blue,
           width: double.infinity,
-          height: double.infinity,
+          height: 300,
           child: ContainedTabBarView(
-            tabBarViewProperties: TabBarViewProperties(
-
-            ),
-            tabBarProperties: TabBarProperties(
-              position: TabBarPosition.top
-            ),
             tabs: [
-            Text('First',style: TextStyle(
-              color: Colors.white,
-              fontSize: 20
-            ),),
-            Text('Second',style: TextStyle(
-                color: Colors.white,
-                fontSize: 20
-            ),),
-            Text('third',style: TextStyle(
-                color: Colors.white,
-                fontSize: 20
-            ),),
+              Text('First'),
+              Text('Second'),
+              Text('Second'),
+              Text('Second'),
+              Text('Second'),
+              Text('Second'),
+              Text('Second'),
+              Text('Second'),
+              Text('Second'),
 
-
-
-          ], views: [
-            Container(
-              color: Colors.cyan,
-            ),
-            Container(
-              color: Colors.teal,
-            ),
-            Container(
-              color: Colors.green,
-            ),
-
-          ],
-          onChange: (index) => print(index),
-          )  ,
+            ],
+            views: [
+              Container(color: Colors.red),
+              Container(color: Colors.green),
+              Container(color: Colors.green),
+              Container(color: Colors.green),
+              Container(color: Colors.green),
+              Container(color: Colors.green),
+              Container(color: Colors.green),
+              Container(color: Colors.green),
+              Container(color: Colors.green)
+            ],
+            onChange: (index) => print(index),
+          ),
         ),
       ),
 

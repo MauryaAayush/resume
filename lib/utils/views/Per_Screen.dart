@@ -11,53 +11,22 @@ class Personal_Screen extends StatefulWidget {
 class _Personal_ScreenState extends State<Personal_Screen> {
   @override
   Widget build(BuildContext context) {
-
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
 
-    return  SafeArea(
+    return SafeArea(
       child: DefaultTabController(
-        length: 2,
+        length: 9,
         child: Scaffold(
           appBar: AppBar(
             backgroundColor: maincolor,
-            toolbarHeight: 80,
-           bottom: TabBar(
-             tabs: [
-               Text(
-                 'Personal',
-               ),
-               Text(
-                 'Education',
-               ),
-               Text(
-                 'Skills',
-               ),
-               Text(
-                 'About',
-               ),
-               Text(
-                 'Experience',
-               ),
-               Text(
-                 'projects',
-
-               ),
-               Text(
-                 'certifications',
-               ),
-               Text(
-                 'languages',
-               ),
-               Text(
-                 'socials',
-               ),
-
-           ],),
-            title:  Text(
+            toolbarHeight: 30,
+            title: Text(
               'Resume Builder',
               style: TextStyle(
-                  color: Colors.white, fontWeight: FontWeight.w500, fontSize: 25),
+                  color: Colors.white,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 25),
             ),
             actions: [
               Padding(
@@ -68,12 +37,12 @@ class _Personal_ScreenState extends State<Personal_Screen> {
                   },
                   child: Container(
                     alignment: Alignment.center,
-                    height: height*0.05,
-                    width: width*0.3,
+                    height: height * 0.05,
+                    width: width * 0.3,
                     decoration: BoxDecoration(
                         color: const Color(0xff5C8374),
                         borderRadius: BorderRadius.circular(10)),
-                    child:  Text(
+                    child: Text(
                       'Generate Resume',
                       style: TextStyle(
                           color: Colors.white,
@@ -84,106 +53,46 @@ class _Personal_ScreenState extends State<Personal_Screen> {
                 ),
               )
             ],
+            bottom: TabBar(
+              automaticIndicatorColorAdjustment: false,
+              isScrollable: true,
+              tabs: [
+                Text(
+                  'Personal',
+                ),
+                Text(
+                  'Education',
+                ),
+                Text(
+                  'Skills',
+                ),
+                Text(
+                  'About',
+                ),
+                Text(
+                  'Experience',
+                ),
+                Text(
+                  'projects',
+
+                ),
+                Text(
+                  'certifications',
+                ),
+                Text(
+                  'languages',
+                ),
+                Text(
+                  'socials',
+                ),
+
+              ],),
           ),
           body: SingleChildScrollView(
-             scrollDirection: Axis.vertical,
+            scrollDirection: Axis.vertical,
             child: Column(
               children: [
-                // SingleChildScrollView(
-                //   scrollDirection: Axis.horizontal,
-                //   // child: Row(
-                //   //   children: [
-                //   //     SizedBox(
-                //   //       width: 25,
-                //   //     ),
-                //   //     GestureDetector(
-                //   //       onTap: () {
-                //   //         Navigator.of(context).pushReplacementNamed('/home');
-                //   //       },
-                //   //       child: Text(
-                //   //         'Personal',
-                //   //         style: TextStyle(
-                //   //             color: Colors.white,
-                //   //             fontWeight: FontWeight.w500,
-                //   //             fontSize: 20),
-                //   //       ),
-                //   //     ),
-                //   //     SizedBox(
-                //   //       width: 25,
-                //   //     ),
-                //   //     GestureDetector(
-                //   //       onTap: () {
-                //   //         Navigator.of(context).pushReplacementNamed('/education');
-                //   //       },
-                //   //       child:
-                //   //     ),
-                //   //     SizedBox(
-                //   //       width: 25,
-                //   //     ),
-                //   //     GestureDetector(
-                //   //       onTap: () {
-                //   //         Navigator.of(context).pushReplacementNamed('/skill');
-                //   //       },
-                //   //       child:
-                //   //     ),
-                //   //     SizedBox(
-                //   //       width: 25,
-                //   //     ),
-                //   //     GestureDetector(
-                //   //       onTap: () {
-                //   //         Navigator.of(context).pushReplacementNamed('/about');
-                //   //
-                //   //       },
-                //   //       child:
-                //   //     ),
-                //   //     SizedBox(
-                //   //       width: 25,
-                //   //     ),
-                //   //     GestureDetector(
-                //   //       onTap: () {
-                //   //         Navigator.of(context).pushReplacementNamed('/experience');
-                //   //       },
-                //   //       child:
-                //   //     ),
-                //   //     SizedBox(
-                //   //       width: 25,
-                //   //     ),
-                //   //     GestureDetector(
-                //   //       onTap: () {
-                //   //         Navigator.of(context).pushReplacementNamed('/project');
-                //   //       },
-                //   //       child:
-                //   //     ),
-                //   //     SizedBox(
-                //   //       width: 25,
-                //   //     ),
-                //   //     GestureDetector(
-                //   //       onTap: () {
-                //   //         Navigator.of(context).pushReplacementNamed('/certification');
-                //   //       },
-                //   //       child:
-                //   //     ),
-                //   //     SizedBox(
-                //   //       width: 25,
-                //   //     ),
-                //   //     GestureDetector(
-                //   //       onTap: () {
-                //   //         Navigator.of(context).pushReplacementNamed('/language');
-                //   //       },
-                //   //       child:
-                //   //     ),
-                //   //     SizedBox(
-                //   //       width: 25,
-                //   //     ),
-                //   //     GestureDetector(
-                //   //       onTap: () {
-                //   //         Navigator.of(context).pushReplacementNamed('/social');
-                //   //       },
-                //   //       child:
-                //   //     )
-                //   //   ],
-                //   // ),
-                // ),
+
                 const SizedBox(
                   height: 30,
                 ),
@@ -204,7 +113,7 @@ class _Personal_ScreenState extends State<Personal_Screen> {
                       focusedBorder: OutlineInputBorder(
                           borderSide: const BorderSide(color: Colors.white),
                           borderRadius: BorderRadius.circular(20)),
-            //z  contentPadding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
+                      //z  contentPadding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
                     ),
                   ),
                 ),
@@ -228,7 +137,7 @@ class _Personal_ScreenState extends State<Personal_Screen> {
                       focusedBorder: OutlineInputBorder(
                           borderSide: const BorderSide(color: Colors.white),
                           borderRadius: BorderRadius.circular(20)),
-            //contentPadding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
+                      //contentPadding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
                     ),
                   ),
                 ),
@@ -252,7 +161,7 @@ class _Personal_ScreenState extends State<Personal_Screen> {
                       focusedBorder: OutlineInputBorder(
                           borderSide: const BorderSide(color: Colors.white),
                           borderRadius: BorderRadius.circular(20)),
-            // contentPadding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
+                      // contentPadding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
                     ),
                   ),
                 ),
@@ -276,7 +185,7 @@ class _Personal_ScreenState extends State<Personal_Screen> {
                       focusedBorder: OutlineInputBorder(
                           borderSide: const BorderSide(color: Colors.white),
                           borderRadius: BorderRadius.circular(20)),
-            // contentPadding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
+                      // contentPadding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
                     ),
                   ),
                 ),
@@ -300,7 +209,7 @@ class _Personal_ScreenState extends State<Personal_Screen> {
                       focusedBorder: OutlineInputBorder(
                           borderSide: const BorderSide(color: Colors.white),
                           borderRadius: BorderRadius.circular(20)),
-            // contentPadding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
+                      // contentPadding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
                     ),
                   ),
                 ),
@@ -312,12 +221,13 @@ class _Personal_ScreenState extends State<Personal_Screen> {
                       color: const Color(0xff009788),
                       borderRadius: BorderRadius.circular(10)
                   ),
-                  child: const Center(child: Text('Save details', style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 23,
-                    fontWeight: FontWeight.w400,
-                  ),
-                  ),
+                  child: const Center(
+                    child: Text('Save details', style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 23,
+                      fontWeight: FontWeight.w400,
+                    ),
+                    ),
                   ),
                 ),
               ],
