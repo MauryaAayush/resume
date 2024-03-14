@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:resume/utils/colors/color.dart';
 
 class Personal_Screen extends StatefulWidget {
   const Personal_Screen({super.key});
@@ -18,76 +17,7 @@ class _Personal_ScreenState extends State<Personal_Screen> {
       child: DefaultTabController(
         length: 9,
         child: Scaffold(
-          appBar: AppBar(
-            backgroundColor: maincolor,
-            toolbarHeight: 30,
-            title: Text(
-              'Resume Builder',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500,
-                  fontSize: 25),
-            ),
-            actions: [
-              Padding(
-                padding: const EdgeInsets.only(right: 20),
-                child: InkWell(
-                  onTap: () {
-                    setState(() {});
-                  },
-                  child: Container(
-                    alignment: Alignment.center,
-                    height: height * 0.05,
-                    width: width * 0.3,
-                    decoration: BoxDecoration(
-                        color: const Color(0xff5C8374),
-                        borderRadius: BorderRadius.circular(10)),
-                    child: Text(
-                      'Generate Resume',
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 15,
-                          fontWeight: FontWeight.w500),
-                    ),
-                  ),
-                ),
-              )
-            ],
-            bottom: TabBar(
-              automaticIndicatorColorAdjustment: false,
-              isScrollable: true,
-              tabs: [
-                Text(
-                  'Personal',
-                ),
-                Text(
-                  'Education',
-                ),
-                Text(
-                  'Skills',
-                ),
-                Text(
-                  'About',
-                ),
-                Text(
-                  'Experience',
-                ),
-                Text(
-                  'projects',
 
-                ),
-                Text(
-                  'certifications',
-                ),
-                Text(
-                  'languages',
-                ),
-                Text(
-                  'socials',
-                ),
-
-              ],),
-          ),
           body: SingleChildScrollView(
             scrollDirection: Axis.vertical,
             child: Column(
