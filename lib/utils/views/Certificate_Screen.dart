@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resume/utils/colors/color.dart';
 
 class Certificate_Screen extends StatefulWidget {
   const Certificate_Screen({super.key});
@@ -123,7 +124,7 @@ class _Certificate_ScreenState extends State<Certificate_Screen> {
                     height: 60,
                     width: 200,
                     decoration: BoxDecoration(
-                        color: Color(0xff009788),
+                        color: maincolor,
                         borderRadius: BorderRadius.circular(10)
                     ),
                     child: Center(child: Text('Save details',style: TextStyle(
@@ -139,7 +140,7 @@ class _Certificate_ScreenState extends State<Certificate_Screen> {
                     height: 60,
                     width: 200,
                     decoration: BoxDecoration(
-                        color: Color(0xff2196F3),
+                        color: second,
                         borderRadius: BorderRadius.circular(10)
                     ),
                     child: Center(child: Text('Discard',style: TextStyle(

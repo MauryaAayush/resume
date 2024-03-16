@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resume/utils/colors/color.dart';
 
 class Project_Screen extends StatefulWidget {
   const Project_Screen({super.key});
@@ -147,7 +148,7 @@ class _Project_ScreenState extends State<Project_Screen> {
                     height: 60,
                     width: 200,
                     decoration: BoxDecoration(
-                        color: Color(0xff009788),
+                        color: maincolor,
                         borderRadius: BorderRadius.circular(10)
                     ),
                     child: Center(child: Text('Save details',style: TextStyle(
@@ -163,7 +164,7 @@ class _Project_ScreenState extends State<Project_Screen> {
                     height: 60,
                     width: 200,
                     decoration: BoxDecoration(
-                        color: Color(0xff2196F3),
+                        color: second,
                         borderRadius: BorderRadius.circular(10)
                     ),
                     child: Center(child: Text('Discard',style: TextStyle(

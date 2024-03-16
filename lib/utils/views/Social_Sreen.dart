@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resume/utils/colors/color.dart';
 
 class Social_Screen extends StatefulWidget {
   const Social_Screen({super.key});
@@ -116,7 +117,7 @@ class _Social_ScreenState extends State<Social_Screen> {
               height: 60,
               width: 200,
               decoration: BoxDecoration(
-                  color: const Color(0xff4CB6AC),
+                  color: maincolor,
                   borderRadius: BorderRadius.circular(15)
               ),
               child: const Center(

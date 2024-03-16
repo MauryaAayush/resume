@@ -148,7 +148,7 @@ class _Education_ScreenState extends State<Education_Screen> {
                     height: 60,
                     width: 200,
                     decoration: BoxDecoration(
-                        color: Color(0xff2196F3),
+                        color: second,
                         borderRadius: BorderRadius.circular(10)
                     ),
                     child: Center(child: Text('Discard',style: TextStyle(

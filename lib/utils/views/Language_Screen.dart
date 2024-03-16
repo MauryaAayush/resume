@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resume/utils/colors/color.dart';
 
 class Language_Screen extends StatefulWidget {
   const Language_Screen({super.key});
@@ -40,8 +41,8 @@ class _Language_ScreenState extends State<Language_Screen> {
                     Container(
                       height: 50,
                       width: 50,
-                      decoration: const BoxDecoration(
-                          color: Color(0xff80CBC4)
+                      decoration:  BoxDecoration(
+                          color: maincolor
                       ),
                       child: const Icon(Icons.add,size: 30,),
                     ),

@@ -31,13 +31,21 @@ class _MainScreenState extends State<MainScreen> {
         child: Scaffold(
           appBar: AppBar(
             backgroundColor: maincolor,
-            toolbarHeight: 30,
-            title: Text(
-              'Resume Builder',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w500,
-                  fontSize: 25),
+            toolbarHeight: 50,
+            title: Container(
+              margin: EdgeInsets.symmetric(vertical: 20),
+              child: Row(
+
+                children: [
+                  Text(
+                    'Resume Builder',
+                    style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500,
+                        fontSize: 25),
+                  ),
+                ],
+              ),
             ),
             actions: [
               Padding(
@@ -66,6 +74,11 @@ class _MainScreenState extends State<MainScreen> {
             ],
             bottom: TabBar(
               automaticIndicatorColorAdjustment: false,
+              labelColor: Colors.white,
+              labelStyle: TextStyle(
+                fontSize: 17
+              ),
+              unselectedLabelColor: Colors.black45,
               isScrollable: true,
               tabs: [
                 Tab(text: 'Personal'),
@@ -77,7 +90,6 @@ class _MainScreenState extends State<MainScreen> {
                 Tab(text: 'Certifications'),
                 Tab(text: 'Languages'),
                 Tab(text: 'Socials'),
-
               ],),
           ),
           body: TabBarView(
