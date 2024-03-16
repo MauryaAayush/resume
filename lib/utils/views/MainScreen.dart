@@ -55,17 +55,19 @@ class _MainScreenState extends State<MainScreen> {
                     setState(() {});
                   },
                   child: Container(
+                    margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
                     alignment: Alignment.center,
                     height: height * 0.05,
                     width: width * 0.3,
                     decoration: BoxDecoration(
                         color:  Colors.redAccent,
-                        borderRadius: BorderRadius.circular(10)),
+                        borderRadius: BorderRadius.circular(5)),
+
                     child: Text(
                       'Generate Resume',
                       style: TextStyle(
                           color: Colors.white,
-                          fontSize: 15,
+                          fontSize: 14,
                           fontWeight: FontWeight.w500),
                     ),
                   ),
