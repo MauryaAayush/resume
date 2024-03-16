@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resume/utils/colors/color.dart';
 
 class About_Screen extends StatefulWidget {
   const About_Screen({super.key});
@@ -34,7 +35,7 @@ class _About_ScreenState extends State<About_Screen> {
                       height: 50,
                       width: 150,
                       decoration: BoxDecoration(
-                          color: const Color(0xff4DB5AC),
+                          color: maincolor,
                           borderRadius: BorderRadius.circular(7)
                       ),
                       child: const Center(

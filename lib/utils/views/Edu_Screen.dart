@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resume/utils/colors/color.dart';
 
 class Education_Screen extends StatefulWidget {
   const Education_Screen({super.key});
@@ -131,7 +132,7 @@ class _Education_ScreenState extends State<Education_Screen> {
                     height: 60,
                     width: 200,
                     decoration: BoxDecoration(
-                        color: Color(0xff009788),
+                        color: maincolor,
                         borderRadius: BorderRadius.circular(10)
                     ),
                     child: Center(child: Text('Save details',style: TextStyle(

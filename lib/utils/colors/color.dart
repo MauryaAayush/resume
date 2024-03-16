@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
 
 
-Color maincolor = Colors.redAccent;
+Color maincolor = Colors.red;
 Color textcolor = Colors.grey;

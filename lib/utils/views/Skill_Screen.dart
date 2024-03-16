@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resume/utils/colors/color.dart';
 
 class Skill_screen extends StatefulWidget {
   const Skill_screen({super.key});
@@ -36,7 +37,7 @@ class _Skill_screenState extends State<Skill_screen> {
                       height: 40,
                       width: 50,
                       decoration: BoxDecoration(
-                          color: const Color(0xff80CCC3),
+                          color: maincolor,
                           borderRadius: BorderRadius.circular(10)),
                       child: IconButton(
                         onPressed: () {},

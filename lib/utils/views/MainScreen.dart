@@ -51,7 +51,7 @@ class _MainScreenState extends State<MainScreen> {
                     height: height * 0.05,
                     width: width * 0.3,
                     decoration: BoxDecoration(
-                        color:  Color(0xff5C8374),
+                        color:  Colors.redAccent,
                         borderRadius: BorderRadius.circular(10)),
                     child: Text(
                       'Generate Resume',
