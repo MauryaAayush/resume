@@ -9,12 +9,16 @@ class About_Screen extends StatefulWidget {
   State<About_Screen> createState() => _About_ScreenState();
 }
 
+TextEditingController? txtObjective;
+
 class _About_ScreenState extends State<About_Screen> {
 
-  final TextEditingController txtObjective = TextEditingController();
+   // TextEditingController txtObjective = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+
+    txtObjective = TextEditingController(text: selectedObjective);
     return SingleChildScrollView(
       scrollDirection: Axis.vertical,
       child: Padding(
@@ -69,6 +73,8 @@ class _About_ScreenState extends State<About_Screen> {
 
             TextFormField(
               controller: txtObjective,
+              minLines: 1,
+              maxLines: 9,
               style: const TextStyle(
                   color: Colors.black,
                   fontSize: 20,
@@ -88,11 +94,10 @@ class _About_ScreenState extends State<About_Screen> {
                     borderSide:  BorderSide(color: Colors.white),
                     borderRadius: BorderRadius.circular(20)),
 
-                contentPadding: EdgeInsets.symmetric(vertical: 130, horizontal: 20),
+                contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
 
               ),
             ),
-
 
 
             const SizedBox(height: 10,),
