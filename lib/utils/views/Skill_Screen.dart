@@ -12,7 +12,7 @@ class Skill_screen extends StatefulWidget {
 
 class _Skill_screenState extends State<Skill_screen> {
   List<String> skills = [];
-  final TextEditingController txtSkills = TextEditingController();
+    final TextEditingController txtSkills = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
