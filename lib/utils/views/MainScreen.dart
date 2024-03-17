@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resume/utils/views/PDF_screen.dart';
 
 import '../colors/color.dart';
 import '../datas.dart';
@@ -13,7 +14,7 @@ import 'Skill_Screen.dart';
 import 'Social_Sreen.dart';
 
 class MainScreen extends StatefulWidget {
-   MainScreen({super.key});
+  MainScreen({super.key});
 
   @override
   State<MainScreen> createState() => _MainScreenState();
@@ -26,20 +27,21 @@ Education education = Education();
 class _MainScreenState extends State<MainScreen> {
   @override
   Widget build(BuildContext context) {
-
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
 
     resumeController.txtName = TextEditingController(text: 'Aayush Maurya');
-    resumeController.txtEmail = TextEditingController(text: 'aayush235@gmail.com');
+    resumeController.txtEmail =
+        TextEditingController(text: 'aayush235@gmail.com');
     resumeController.txtPhone = TextEditingController(text: '8604949240');
     resumeController.txtAddress = TextEditingController(
         text: '74, Raghuvir dhaam soc, limbayat, Surat - 394210');
 
-    resumeController.txtUniversityName = TextEditingController(text: 'Sunrise School');
-    resumeController.txtDegree = TextEditingController(text: 'HSC');
-    resumeController.txtStartYear = TextEditingController(text: '2010');
-    resumeController.txtEndYear = TextEditingController(text: '2012');
+    resumeController.txtUniversityName =
+        TextEditingController(text: 'APS school');
+    resumeController.txtDegree = TextEditingController(text: 'Bsc');
+    resumeController.txtStartYear = TextEditingController(text: '2021');
+    resumeController.txtEndYear = TextEditingController(text: '2025');
 
     return SafeArea(
       child: DefaultTabController(
@@ -47,7 +49,7 @@ class _MainScreenState extends State<MainScreen> {
         child: Scaffold(
           appBar: AppBar(
             backgroundColor: maincolor,
-            toolbarHeight: 50,
+            toolbarHeight: 70,
             title: Container(
               margin: EdgeInsets.symmetric(vertical: 20),
               child: Row(
@@ -67,7 +69,9 @@ class _MainScreenState extends State<MainScreen> {
                 padding: const EdgeInsets.only(right: 20),
                 child: InkWell(
                   onTap: () {
-                    setState(() {});
+                    setState(() {
+                      Navigator.of(context).push(MaterialPageRoute(builder: (context) => PDF(),));
+                    });
                   },
                   child: Container(
                     margin: EdgeInsets.fromLTRB(0, 10, 0, 0),
@@ -75,15 +79,21 @@ class _MainScreenState extends State<MainScreen> {
                     height: height * 0.05,
                     width: width * 0.3,
                     decoration: BoxDecoration(
-                        color:  Colors.redAccent,
+                        boxShadow: [
+                          BoxShadow(
+                              color: Colors.black12,
+                              blurRadius: 1,
+                              spreadRadius: 0.5,
+                              offset: Offset(0, 3))
+                        ],
+                        color: Colors.redAccent,
                         borderRadius: BorderRadius.circular(5)),
-
                     child: Text(
                       'Generate Resume',
                       style: TextStyle(
                           color: Colors.white,
-                          fontSize: 14,
-                          fontWeight: FontWeight.w500),
+                          fontSize: 15,
+                          fontWeight: FontWeight.w600),
                     ),
                   ),
                 ),
@@ -94,7 +104,7 @@ class _MainScreenState extends State<MainScreen> {
               unselectedLabelStyle: TextStyle(
                 fontSize: 17,
                 fontWeight: FontWeight.w500,
-                  color: Colors.black38,
+                color: Colors.black38,
               ),
               automaticIndicatorColorAdjustment: false,
               labelStyle: TextStyle(
@@ -113,21 +123,20 @@ class _MainScreenState extends State<MainScreen> {
                 Tab(text: 'Certifications'),
                 Tab(text: 'Languages'),
                 Tab(text: 'Socials'),
-              ],),
+              ],
+            ),
           ),
-          body: TabBarView(
-              children: [
-                Personal_Screen(),
-                EduInfo(),
-                Skill_screen(),
-                About_Screen(),
-                Experience_Screen(),
-                Project_Screen(),
-                Certificate_Screen(),
-                Language_Screen(),
-                Social_Screen(),
-
-              ]),
+          body: TabBarView(children: [
+            Personal_Screen(),
+            EduInfo(),
+            Skill_screen(),
+            About_Screen(),
+            Experience_Screen(),
+            Project_Screen(),
+            Certificate_Screen(),
+            Language_Screen(),
+            Social_Screen(),
+          ]),
         ),
       ),
     );
