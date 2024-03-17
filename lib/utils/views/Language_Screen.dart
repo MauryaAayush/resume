@@ -57,33 +57,7 @@ class _Language_ScreenState extends State<Language_Screen> {
                 ),
               ),
 
-              GestureDetector(
-                onTap: () {
-                  setState(() {
 
-                  });
-                },
-                child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  height: 50,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    color: maincolor,
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text('Add education',style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 15,
-                    ),),
-
-                    Icon(Icons.add,size: 30,)
-                  ],
-                  ),
-                ),
-              )
 
             ],
           ),

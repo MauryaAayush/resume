@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../colors/color.dart';
+import '../datas.dart';
 import 'About_Screen.dart';
 import 'Certificate_Screen.dart';
 import 'Edu_Screen.dart';
@@ -12,11 +13,15 @@ import 'Skill_Screen.dart';
 import 'Social_Sreen.dart';
 
 class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
+   MainScreen({super.key});
 
   @override
   State<MainScreen> createState() => _MainScreenState();
 }
+
+int tabIndex = 0;
+ResumeController resumeController = ResumeController();
+Education education = Education();
 
 class _MainScreenState extends State<MainScreen> {
   @override
@@ -24,6 +29,17 @@ class _MainScreenState extends State<MainScreen> {
 
     double height = MediaQuery.of(context).size.height;
     double width = MediaQuery.of(context).size.width;
+
+    resumeController.txtName = TextEditingController(text: 'Aayush Maurya');
+    resumeController.txtEmail = TextEditingController(text: 'aayush235@gmail.com');
+    resumeController.txtPhone = TextEditingController(text: '8604949240');
+    resumeController.txtAddress = TextEditingController(
+        text: '74, Raghuvir dhaam soc, limbayat, Surat - 394210');
+
+    resumeController.txtUniversityName = TextEditingController(text: 'Sunrise School');
+    resumeController.txtDegree = TextEditingController(text: 'HSC');
+    resumeController.txtStartYear = TextEditingController(text: '2010');
+    resumeController.txtEndYear = TextEditingController(text: '2012');
 
     return SafeArea(
       child: DefaultTabController(
@@ -35,7 +51,6 @@ class _MainScreenState extends State<MainScreen> {
             title: Container(
               margin: EdgeInsets.symmetric(vertical: 20),
               child: Row(
-
                 children: [
                   Text(
                     'Resume Builder',
@@ -75,12 +90,18 @@ class _MainScreenState extends State<MainScreen> {
               )
             ],
             bottom: TabBar(
-              automaticIndicatorColorAdjustment: false,
-              labelColor: Colors.white,
-              labelStyle: TextStyle(
-                fontSize: 17
+              indicatorColor: Colors.white,
+              unselectedLabelStyle: TextStyle(
+                fontSize: 17,
+                fontWeight: FontWeight.w500,
+                  color: Colors.black38,
               ),
-              unselectedLabelColor: Colors.black45,
+              automaticIndicatorColorAdjustment: false,
+              labelStyle: TextStyle(
+                fontSize: 20,
+                color: Colors.white,
+                fontWeight: FontWeight.w500,
+              ),
               isScrollable: true,
               tabs: [
                 Tab(text: 'Personal'),
@@ -97,7 +118,7 @@ class _MainScreenState extends State<MainScreen> {
           body: TabBarView(
               children: [
                 Personal_Screen(),
-                Education_Screen(),
+                EduInfo(),
                 Skill_screen(),
                 About_Screen(),
                 Experience_Screen(),
