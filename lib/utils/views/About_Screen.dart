@@ -11,18 +11,21 @@ class About_Screen extends StatefulWidget {
 class _About_ScreenState extends State<About_Screen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
+    return SingleChildScrollView(
+      scrollDirection: Axis.vertical,
+      child: Padding(
+        padding: const EdgeInsets.all(10),
         child: Column(
           children: [
 
             Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 const Padding(
-                  padding: EdgeInsets.only(right: 160,top: 10,left: 10),
+                  padding: EdgeInsets.only(right: 185,top: 30,left: 10),
                   child: Text('About me',style: TextStyle(
                       color: Colors.black,
-                      fontSize: 25
+                      fontSize: 21.5
                   ),),
                 ),
                 InkWell(
@@ -32,8 +35,9 @@ class _About_ScreenState extends State<About_Screen> {
                   child: Padding(
                     padding: const EdgeInsets.only(top: 40),
                     child: Container(
+                      alignment: Alignment.center,
                       height: 50,
-                      width: 150,
+                      width: 135,
                       decoration: BoxDecoration(
                           color: maincolor,
                           borderRadius: BorderRadius.circular(7)
@@ -42,7 +46,7 @@ class _About_ScreenState extends State<About_Screen> {
                         child: Text('Save details',
                           style: TextStyle(
                               color: Colors.white,
-                              fontSize: 19,
+                              fontSize: 16.5,
                               fontWeight: FontWeight.w500
                           ),),
                       ),
@@ -58,27 +62,18 @@ class _About_ScreenState extends State<About_Screen> {
             const SizedBox(
               height: 10,
             ),
-            Padding(
-              padding: const EdgeInsets.only(right: 10, left: 10),
-              child: TextFormField(
-                style: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w500),
-                decoration: InputDecoration(
-                  filled: true,
-                  fillColor: const Color(0xffDFDFDF),
-                  enabledBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(color: Colors.white),
-                      borderRadius: BorderRadius.circular(20)),
-                  focusedBorder: OutlineInputBorder(
-                      borderSide: const BorderSide(color: Colors.white),
-                      borderRadius: BorderRadius.circular(20)),
-                  contentPadding:
-                  const EdgeInsets.symmetric(vertical: 110, horizontal: 20),
-                ),
+
+
+
+            Container(
+              height: 260,
+              width: double.infinity,
+              decoration: BoxDecoration(
+                color: Colors.black12,
+                borderRadius: BorderRadius.circular(20),
               ),
             ),
+
             const SizedBox(height: 10,),
             const Divider(),
             const Text('Suggestions for you',style: TextStyle(
