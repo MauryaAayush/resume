@@ -132,7 +132,7 @@ async {
                             child: image1,
                           ),
                           pd.SizedBox(width: 10),
-                          pd.Text('8604949240',
+                          pd.Text(resumeData.phone!,
                             style: pd.TextStyle(
                               color: PdfColors.white,
                               fontSize: 18,
@@ -207,7 +207,7 @@ async {
                           ),
                           pd.SizedBox(width: 10),
                           pd.Text(
-                            "123AnyWhare City",
+                            resumeData.address!,
                             style: pd.TextStyle(
                               color: PdfColors.white,
                               fontSize: 18,
