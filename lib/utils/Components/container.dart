@@ -5,7 +5,7 @@ import '../colors/color.dart';
 
 Widget textFieldBox({required TextEditingController controller,required String hintText}) {
   return Padding(
-    padding:  EdgeInsets.only(left: 10, right: 10),
+    padding:  EdgeInsets.only(left: 20, right: 20),
     child: TextFormField(
       controller: controller,
       style:  TextStyle(
@@ -13,7 +13,7 @@ Widget textFieldBox({required TextEditingController controller,required String h
           fontSize: 20,
           fontWeight: FontWeight.w500),
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric(horizontal: 30,vertical: 25),
+        contentPadding: EdgeInsets.symmetric(horizontal: 25,vertical: 25),
         filled: true,
         fillColor: const Color(0xffDFDFDF),
         hintText: 'Email',

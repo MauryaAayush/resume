@@ -104,7 +104,7 @@ class _MainScreenState extends State<MainScreen> {
               unselectedLabelStyle: TextStyle(
                 fontSize: 17,
                 fontWeight: FontWeight.w500,
-                color: Colors.black38,
+                color: Colors.black45,
               ),
               automaticIndicatorColorAdjustment: false,
               labelStyle: TextStyle(
