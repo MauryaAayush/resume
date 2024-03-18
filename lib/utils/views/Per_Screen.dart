@@ -62,6 +62,12 @@ class _Personal_ScreenState extends State<Personal_Screen> {
         ),
         GestureDetector(
           onTap: () {
+            setState(() {
+              resumeData.name = resumeController.txtName!.text;
+              resumeData.email = resumeController.txtEmail!.text;
+              resumeData.phone = resumeController.txtPhone!.text;
+              resumeData.address = resumeController.txtAddress!.text;
+            });
 
           },
           child: Container(
