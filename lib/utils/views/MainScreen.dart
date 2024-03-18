@@ -108,7 +108,7 @@ class _MainScreenState extends State<MainScreen> {
               ),
               automaticIndicatorColorAdjustment: false,
               labelStyle: TextStyle(
-                fontSize: 20,
+                fontSize: 22,
                 color: Colors.white,
                 fontWeight: FontWeight.w500,
               ),

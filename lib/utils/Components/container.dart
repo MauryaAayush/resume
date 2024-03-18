@@ -13,16 +13,19 @@ Widget textFieldBox({required TextEditingController controller,required String h
           fontSize: 20,
           fontWeight: FontWeight.w500),
       decoration: InputDecoration(
+        contentPadding: EdgeInsets.symmetric(horizontal: 30,vertical: 25),
         filled: true,
         fillColor: const Color(0xffDFDFDF),
         hintText: 'Email',
         enabledBorder: OutlineInputBorder(
             borderSide: const BorderSide(color: Colors.white),
             borderRadius: BorderRadius.circular(20)),
+
         focusedBorder: OutlineInputBorder(
             borderSide: const BorderSide(color: Colors.white),
             borderRadius: BorderRadius.circular(20)),
       ),
+
     ),
   );
 }
