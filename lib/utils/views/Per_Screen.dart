@@ -1,8 +1,6 @@
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:resume/utils/colors/color.dart';
 import 'package:resume/utils/datas.dart';
 
 import '../Components/container.dart';
@@ -62,18 +60,23 @@ class _Personal_ScreenState extends State<Personal_Screen> {
         const SizedBox(
           height: 30,
         ),
-        Container(
-          height: 50,
-          width: 200,
-          decoration: BoxDecoration(
-              color: Colors.red, borderRadius: BorderRadius.circular(10)),
-          child: const Center(
-            child: Text(
-              'Save details',
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 20,
-                fontWeight: FontWeight.w400,
+        GestureDetector(
+          onTap: () {
+
+          },
+          child: Container(
+            height: 50,
+            width: 200,
+            decoration: BoxDecoration(
+                color: Colors.red, borderRadius: BorderRadius.circular(10)),
+            child: const Center(
+              child: Text(
+                'Save details',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 20,
+                  fontWeight: FontWeight.w400,
+                ),
               ),
             ),
           ),
