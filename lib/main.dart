@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:resume/utils/views/MainScreen.dart';
 import 'package:resume/utils/views/PDF_screen.dart';
-import 'package:resume/utils/views/check.dart';
 
 void main() {
 
@@ -23,7 +22,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         useMaterial3: true,
       ),
-      home:  Mycheck(),
+      home:  MainScreen(),
     );
   }
 }
