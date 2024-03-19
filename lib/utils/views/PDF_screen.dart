@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pdf/pdf.dart';
@@ -34,8 +36,6 @@ async {
   // final imageProfile = pd.MemoryImage(imgPath!.readAsBytesSync());
   // final img = imageBytes;
 
-
-
   final img = await rootBundle.load('assets/call.jpg');
   final imageBytes = img.buffer.asUint8List();
   pd.Image image1 = pd.Image(pd.MemoryImage(imageBytes));
@@ -69,381 +69,393 @@ async {
                 crossAxisAlignment: pd.CrossAxisAlignment.start,
                 //  mainAxisAlignment: pd.MainAxisAlignment.start,
                 children: [
-                  pd.Stack(children: [
-                    pd.Container(
-                      height: 720,
-                      width: 225,
-                      decoration: const pd.BoxDecoration(
-                        color: PdfColors.black,
-                      ),
-                    ),
-                    pd.Positioned(
-                      top: 50,
-                      left: 50,
-                      child: pd.Container(
-                        height: 130,
-                        width: 130,
-                        decoration: const pd.BoxDecoration(
-                          color: PdfColors.black,
-                          shape: pd.BoxShape.circle,
-                        ),
-                        child: image5,
-                      ),
-                    ),
-                    // pd.SizedBox(height: 100),
 
-                    pd.Positioned(
-                      top: 200,
-                      left: 30,
-                      child: pd.Text(
-                        "CONTACT",
-                        style: pd.TextStyle(
-                          color: PdfColors.white,
-                          fontSize: 18,
-                          fontWeight: pd.FontWeight.bold,
-                        ),
-                      ),
-                    ),
+                  pd.Column(
+                    children: [
 
-                    pd.Positioned(
-                      top: 225,
-                      left: 30,
-                      child: pd.Container(
-                        width: 150,
-                        height: 4,
-                        child: pd.Divider(
-                          thickness: 4,
-                          color: PdfColors.white,
-                        ),
-                      ),
-                    ),
+                        pd.Container(
+                          height: 720,
+                          width: 260,
+                          decoration: const pd.BoxDecoration(
+                            color: PdfColors.black,
+                          ),
+                          child: pd.Column(
+                            children: [
 
-                    pd.Positioned(
-                      top: 240,
-                      left: 30,
-                      child: pd.Row(
-                        children: [
-                          pd.Container(
-                            height: 30,
-                            width: 30,
-                            decoration: pd.BoxDecoration(
-                              shape: pd.BoxShape.circle,
-                            ),
-                            child: image1,
-                          ),
-                          pd.SizedBox(width: 10),
-                          pd.Text(resumeData.phone!,
-                            style: pd.TextStyle(
-                              color: PdfColors.white,
-                              fontSize: 18,
-                              fontWeight: pd.FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    pd.Positioned(
-                      top: 280,
-                      left: 30,
-                      child: pd.Row(
-                        children: [
-                          pd.Container(
-                            height: 30,
-                            width: 30,
-                            decoration: pd.BoxDecoration(
-                              shape: pd.BoxShape.circle,
-                            ),
-                            child: image2,
-                          ),
-                          pd.SizedBox(width: 10),
-                          pd.Text(
-                            resumeData.email!,
-                            style: pd.TextStyle(
-                              color: PdfColors.white,
-                              fontSize: 18,
-                              fontWeight: pd.FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    pd.Positioned(
-                      top: 320,
-                      left: 30,
-                      child: pd.Row(
-                        children: [
-                          pd.Container(
-                            height: 30,
-                            width: 30,
-                            decoration: pd.BoxDecoration(
-                              shape: pd.BoxShape.circle,
-                            ),
-                            child: image3,
-                          ),
-                          pd.SizedBox(width: 10),
-                          pd.Text(
-                            "www.com",
-                            style: pd.TextStyle(
-                              color: PdfColors.white,
-                              fontSize: 18,
-                              fontWeight: pd.FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    pd.Positioned(
-                      top: 360,
-                      left: 30,
-                      child: pd.Row(
-                        children: [
-                          pd.Container(
-                            height: 30,
-                            width: 30,
-                            decoration: pd.BoxDecoration(
-                              shape: pd.BoxShape.circle,
-                            ),
-                            child: image4,
-                          ),
-                          pd.SizedBox(width: 10),
-                          pd.Text(
-                            resumeData.address!,
-                            style: pd.TextStyle(
-                              color: PdfColors.white,
-                              fontSize: 18,
-                              fontWeight: pd.FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    pd.Positioned(
-                      top: 400,
-                      left: 30,
-                      child: pd.Text(
-                        "SKILLS",
-                        style: pd.TextStyle(
-                          color: PdfColors.white,
-                          fontSize: 20,
-                          fontWeight: pd.FontWeight.bold,
-                        ),
-                      ),
-                    ),
+                              pd.Padding(
+                                padding: pd.EdgeInsets.symmetric(vertical: 20),
+                                child: pd.Transform.rotate(angle: pi/2,child:  pd.Text('Hello',style: pd.TextStyle(
+                                    fontSize: 30,
+                                    color: PdfColors.white,
+                                )),)
+                              ),
 
-                    pd.Positioned(
-                      top: 430,
-                      left: 30,
-                      child: pd.Container(
-                        width: 150,
-                        height: 4,
-                        child: pd.Divider(
-                          thickness: 4,
-                          color: PdfColors.white,
-                        ),
-                      ),
-                    ),
-                    pd.Positioned(
-                      top: 450,
-                      left: 30,
-                      child: pd.Row(
-                        children: [
-                          pd.SizedBox(width: 10),
-                          pd.Text(
-                            "- Team Work",
-                            style: pd.TextStyle(
-                              color: PdfColors.white,
-                              fontSize: 18,
-                              fontWeight: pd.FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    pd.Positioned(
-                      top: 470,
-                      left: 30,
-                      child: pd.Row(
-                        children: [
-                          pd.SizedBox(width: 10),
-                          pd.Text(
-                            "- Time Management",
-                            style: pd.TextStyle(
-                              color: PdfColors.white,
-                              fontSize: 18,
-                              fontWeight: pd.FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    pd.Positioned(
-                      top: 490,
-                      left: 30,
-                      child: pd.Row(
-                        children: [
-                          pd.SizedBox(width: 10),
-                          pd.Text(
-                            "- Leadership",
-                            style: pd.TextStyle(
-                              color: PdfColors.white,
-                              fontSize: 18,
-                              fontWeight: pd.FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    pd.Positioned(
-                      top: 510,
-                      left: 30,
-                      child: pd.Row(
-                        children: [
-                          pd.SizedBox(width: 10),
-                          pd.Text(
-                            "- Verble &Written ",
-                            style: pd.TextStyle(
-                              color: PdfColors.white,
-                              fontSize: 18,
-                              fontWeight: pd.FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    pd.Positioned(
-                      top: 530,
-                      left: 30,
-                      child: pd.Row(
-                        children: [
-                          pd.SizedBox(width: 10),
-                          pd.Text(
-                            "  Communication",
-                            style: pd.TextStyle(
-                              color: PdfColors.white,
-                              fontSize: 18,
-                              fontWeight: pd.FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    pd.Positioned(
-                      top: 560,
-                      left: 30,
-                      child: pd.Text(
-                        "language",
-                        style: pd.TextStyle(
-                          color: PdfColors.white,
-                          fontSize: 20,
-                          fontWeight: pd.FontWeight.bold,
-                        ),
-                      ),
-                    ),
 
-                    pd.Positioned(
-                      top: 585,
-                      left: 30,
-                      child: pd.Container(
-                        width: 150,
-                        height: 4,
-                        child: pd.Divider(
-                          thickness: 4,
-                          color: PdfColors.white,
+
+
+                            ]
+                          )
                         ),
-                      ),
-                    ),
-                    pd.Positioned(
-                      top: 600,
-                      left: 30,
-                      child: pd.Row(
-                        children: [
-                          pd.SizedBox(width: 10),
-                          pd.Text(
-                            "- English",
-                            style: pd.TextStyle(
-                              color: PdfColors.white,
-                              fontSize: 18,
-                              fontWeight: pd.FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    pd.Positioned(
-                      top: 630,
-                      left: 30,
-                      child: pd.Row(
-                        children: [
-                          pd.SizedBox(width: 10),
-                          pd.Text(
-                            "- French",
-                            style: pd.TextStyle(
-                              color: PdfColors.white,
-                              fontSize: 18,
-                              fontWeight: pd.FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    pd.Positioned(
-                      top: 660,
-                      left: 30,
-                      child: pd.Row(
-                        children: [
-                          pd.SizedBox(width: 10),
-                          pd.Text(
-                            "- China",
-                            style: pd.TextStyle(
-                              color: PdfColors.white,
-                              fontSize: 18,
-                              fontWeight: pd.FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    pd.Positioned(
-                      top: 690,
-                      left: 30,
-                      child: pd.Row(
-                        children: [
-                          pd.SizedBox(width: 10),
-                          pd.Text(
-                            "- Spanish ",
-                            style: pd.TextStyle(
-                              color: PdfColors.white,
-                              fontSize: 18,
-                              fontWeight: pd.FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    pd.Positioned(
-                      top: 720,
-                      left: 30,
-                      child: pd.Row(
-                        children: [
-                          pd.SizedBox(width: 10),
-                          pd.Text(
-                            "  Hindi",
-                            style: pd.TextStyle(
-                              color: PdfColors.white,
-                              fontSize: 18,
-                              fontWeight: pd.FontWeight.bold,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                  ]),
+
+
+
+                        // pd.Positioned(
+                        //   top: 50,
+                        //   left: 50,
+                        //   child: pd.Container(
+                        //     height: 150,
+                        //     width: 150,
+                        //     decoration: const pd.BoxDecoration(
+                        //       color: PdfColors.black,
+                        //       // shape: pd.BoxShape.circle,
+                        //     ),
+                        //     child: image5,
+                        //   ),
+                        // ),
+                        // pd.SizedBox(height: 100),
+
+                        // pd.Positioned(
+                        //   top: 200,
+                        //   left: 30,
+                        //   child: pd.Text(
+                        //     "CONTACT",
+                        //     style: pd.TextStyle(
+                        //       color: PdfColors.white,
+                        //       fontSize: 18,
+                        //       fontWeight: pd.FontWeight.bold,
+                        //     ),
+                        //   ),
+                        // ),
+                        //
+                        // pd.Positioned(
+                        //   top: 225,
+                        //   left: 30,
+                        //   child: pd.Container(
+                        //     width: 150,
+                        //     height: 4,
+                        //     child: pd.Divider(
+                        //       thickness: 4,
+                        //       color: PdfColors.white,
+                        //     ),
+                        //   ),
+                        // ),
+                        //
+                        // pd.Positioned(
+                        //   top: 240,
+                        //   left: 30,
+                        //   child: pd.Row(
+                        //     children: [
+                        //       pd.Container(
+                        //         height: 30,
+                        //         width: 30,
+                        //         decoration: pd.BoxDecoration(
+                        //           shape: pd.BoxShape.circle,
+                        //         ),
+                        //         child: image1,
+                        //       ),
+                        //       pd.SizedBox(width: 10),
+                        //       pd.Text(resumeData.phone!,
+                        //         style: pd.TextStyle(
+                        //           color: PdfColors.white,
+                        //           fontSize: 18,
+                        //           fontWeight: pd.FontWeight.bold,
+                        //         ),
+                        //       ),
+                        //     ],
+                        //   ),
+                        // ),
+                        // pd.Positioned(
+                        //   top: 280,
+                        //   left: 30,
+                        //   child: pd.Row(
+                        //     children: [
+                        //       pd.Container(
+                        //         height: 30,
+                        //         width: 30,
+                        //         decoration: pd.BoxDecoration(
+                        //           shape: pd.BoxShape.circle,
+                        //         ),
+                        //         child: image2,
+                        //       ),
+                        //       pd.SizedBox(width: 10),
+                        //       pd.Text(
+                        //         resumeData.email!,
+                        //         style: pd.TextStyle(
+                        //           color: PdfColors.white,
+                        //           fontSize: 18,
+                        //           fontWeight: pd.FontWeight.bold,
+                        //         ),
+                        //       ),
+                        //     ],
+                        //   ),
+                        // ),
+                        // pd.Positioned(
+                        //   top: 320,
+                        //   left: 30,
+                        //   child: pd.Row(
+                        //     children: [
+                        //       pd.Container(
+                        //         height: 30,
+                        //         width: 30,
+                        //         decoration: pd.BoxDecoration(
+                        //           shape: pd.BoxShape.circle,
+                        //         ),
+                        //         child: image3,
+                        //       ),
+                        //       pd.SizedBox(width: 10),
+                        //       pd.Text(
+                        //         "www.com",
+                        //         style: pd.TextStyle(
+                        //           color: PdfColors.white,
+                        //           fontSize: 18,
+                        //           fontWeight: pd.FontWeight.bold,
+                        //         ),
+                        //       ),
+                        //     ],
+                        //   ),
+                        // ),
+                        // pd.Positioned(
+                        //   top: 360,
+                        //   left: 30,
+                        //   child: pd.Row(
+                        //     children: [
+                        //       pd.Container(
+                        //         height: 30,
+                        //         width: 30,
+                        //         decoration: pd.BoxDecoration(
+                        //           shape: pd.BoxShape.circle,
+                        //         ),
+                        //         child: image4,
+                        //       ),
+                        //       pd.SizedBox(width: 10),
+                        //       pd.Text(
+                        //         resumeData.address!,
+                        //         style: pd.TextStyle(
+                        //           color: PdfColors.white,
+                        //           fontSize: 18,
+                        //           fontWeight: pd.FontWeight.bold,
+                        //         ),
+                        //       ),
+                        //     ],
+                        //   ),
+                        // ),
+                        // pd.Positioned(
+                        //   top: 400,
+                        //   left: 30,
+                        //   child: pd.Text(
+                        //     "SKILLS",
+                        //     style: pd.TextStyle(
+                        //       color: PdfColors.white,
+                        //       fontSize: 20,
+                        //       fontWeight: pd.FontWeight.bold,
+                        //     ),
+                        //   ),
+                        // ),
+                        //
+                        // pd.Positioned(
+                        //   top: 430,
+                        //   left: 30,
+                        //   child: pd.Container(
+                        //     width: 150,
+                        //     height: 4,
+                        //     child: pd.Divider(
+                        //       thickness: 4,
+                        //       color: PdfColors.white,
+                        //     ),
+                        //   ),
+                        // ),
+                        // pd.Positioned(
+                        //   top: 450,
+                        //   left: 30,
+                        //   child: pd.Row(
+                        //     children: [
+                        //       pd.SizedBox(width: 10),
+                        //       pd.Text(
+                        //         "- Team Work",
+                        //         style: pd.TextStyle(
+                        //           color: PdfColors.white,
+                        //           fontSize: 18,
+                        //           fontWeight: pd.FontWeight.bold,
+                        //         ),
+                        //       ),
+                        //     ],
+                        //   ),
+                        // ),
+                        // pd.Positioned(
+                        //   top: 470,
+                        //   left: 30,
+                        //   child: pd.Row(
+                        //     children: [
+                        //       pd.SizedBox(width: 10),
+                        //       pd.Text(
+                        //         "- Time Management",
+                        //         style: pd.TextStyle(
+                        //           color: PdfColors.white,
+                        //           fontSize: 18,
+                        //           fontWeight: pd.FontWeight.bold,
+                        //         ),
+                        //       ),
+                        //     ],
+                        //   ),
+                        // ),
+                        // pd.Positioned(
+                        //   top: 490,
+                        //   left: 30,
+                        //   child: pd.Row(
+                        //     children: [
+                        //       pd.SizedBox(width: 10),
+                        //       pd.Text(
+                        //         "- Leadership",
+                        //         style: pd.TextStyle(
+                        //           color: PdfColors.white,
+                        //           fontSize: 18,
+                        //           fontWeight: pd.FontWeight.bold,
+                        //         ),
+                        //       ),
+                        //     ],
+                        //   ),
+                        // ),
+                        // pd.Positioned(
+                        //   top: 510,
+                        //   left: 30,
+                        //   child: pd.Row(
+                        //     children: [
+                        //       pd.SizedBox(width: 10),
+                        //       pd.Text(
+                        //         "- Verble &Written ",
+                        //         style: pd.TextStyle(
+                        //           color: PdfColors.white,
+                        //           fontSize: 18,
+                        //           fontWeight: pd.FontWeight.bold,
+                        //         ),
+                        //       ),
+                        //     ],
+                        //   ),
+                        // ),
+                        // pd.Positioned(
+                        //   top: 530,
+                        //   left: 30,
+                        //   child: pd.Row(
+                        //     children: [
+                        //       pd.SizedBox(width: 10),
+                        //       pd.Text(
+                        //         "  Communication",
+                        //         style: pd.TextStyle(
+                        //           color: PdfColors.white,
+                        //           fontSize: 18,
+                        //           fontWeight: pd.FontWeight.bold,
+                        //         ),
+                        //       ),
+                        //     ],
+                        //   ),
+                        // ),
+                        // pd.Positioned(
+                        //   top: 560,
+                        //   left: 30,
+                        //   child: pd.Text(
+                        //     "language",
+                        //     style: pd.TextStyle(
+                        //       color: PdfColors.white,
+                        //       fontSize: 20,
+                        //       fontWeight: pd.FontWeight.bold,
+                        //     ),
+                        //   ),
+                        // ),
+                        //
+                        // pd.Positioned(
+                        //   top: 585,
+                        //   left: 30,
+                        //   child: pd.Container(
+                        //     width: 150,
+                        //     height: 4,
+                        //     child: pd.Divider(
+                        //       thickness: 4,
+                        //       color: PdfColors.white,
+                        //     ),
+                        //   ),
+                        // ),
+                        // pd.Positioned(
+                        //   top: 600,
+                        //   left: 30,
+                        //   child: pd.Row(
+                        //     children: [
+                        //       pd.SizedBox(width: 10),
+                        //       pd.Text(
+                        //         "- English",
+                        //         style: pd.TextStyle(
+                        //           color: PdfColors.white,
+                        //           fontSize: 18,
+                        //           fontWeight: pd.FontWeight.bold,
+                        //         ),
+                        //       ),
+                        //     ],
+                        //   ),
+                        // ),
+                        // pd.Positioned(
+                        //   top: 630,
+                        //   left: 30,
+                        //   child: pd.Row(
+                        //     children: [
+                        //       pd.SizedBox(width: 10),
+                        //       pd.Text(
+                        //         "- French",
+                        //         style: pd.TextStyle(
+                        //           color: PdfColors.white,
+                        //           fontSize: 18,
+                        //           fontWeight: pd.FontWeight.bold,
+                        //         ),
+                        //       ),
+                        //     ],
+                        //   ),
+                        // ),
+                        // pd.Positioned(
+                        //   top: 660,
+                        //   left: 30,
+                        //   child: pd.Row(
+                        //     children: [
+                        //       pd.SizedBox(width: 10),
+                        //       pd.Text(
+                        //         "- China",
+                        //         style: pd.TextStyle(
+                        //           color: PdfColors.white,
+                        //           fontSize: 18,
+                        //           fontWeight: pd.FontWeight.bold,
+                        //         ),
+                        //       ),
+                        //     ],
+                        //   ),
+                        // ),
+                        // pd.Positioned(
+                        //   top: 690,
+                        //   left: 30,
+                        //   child: pd.Row(
+                        //     children: [
+                        //       pd.SizedBox(width: 10),
+                        //       pd.Text(
+                        //         "- Spanish ",
+                        //         style: pd.TextStyle(
+                        //           color: PdfColors.white,
+                        //           fontSize: 18,
+                        //           fontWeight: pd.FontWeight.bold,
+                        //         ),
+                        //       ),
+                        //     ],
+                        //   ),
+                        // ),
+
+
+                    ]
+                  ),
+
+                  pd.SizedBox(width: 20),
+
+
                   pd.Column(
                     // mainAxisAlignment: pd.MainAxisAlignment.start,
                     crossAxisAlignment: pd.CrossAxisAlignment.start,
                     children: [
                       pd.Text(
-                        "   CLAUDIA ALVES",
+                       resumeData.name!,
                         style: pd.TextStyle(
                           color: PdfColors.black,
                           fontSize: 35,
@@ -452,7 +464,7 @@ async {
                       ),
                       pd.SizedBox(height: 10),
                       pd.Text(
-                        "      CHIEF EXLUSIVE OFFICE",
+                        "CHIEF EXLUSIVE OFFICE",
                         style: pd.TextStyle(
                           color: PdfColors.black,
                           fontSize: 20,
@@ -461,7 +473,7 @@ async {
                       ),
                       pd.SizedBox(height: 70),
                       pd.Text(
-                        "     PROFESSIONAL PROFILE",
+                        "PROFESSIONAL PROFILE",
                         style: pd.TextStyle(
                           color: PdfColors.black,
                           fontSize: 22,
@@ -469,7 +481,7 @@ async {
                         ),
                       ),
                       pd.Container(
-                        margin: pd.EdgeInsets.symmetric(horizontal: 30),
+                        // margin: pd.EdgeInsets.symmetric(horizontal: 30),
                         width: 290,
                         height: 4,
                         child: pd.Divider(
@@ -479,7 +491,7 @@ async {
                       ),
                       pd.SizedBox(height: 15),
                       pd.Text(
-                        "       I am a growth hacker with 4+ years of \n       experience in sales and marketing in the \n       US market.\n"
+                        "I am a growth hacker with 4+ years of \nexperience in sales and marketing in the \nUS market.\n"
                         ,
                         style: pd.TextStyle(
                           color: PdfColors.grey,
@@ -489,7 +501,7 @@ async {
                       ),
                       pd.SizedBox(height: 20),
                       pd.Text(
-                        "     WORK EXPERIENCE",
+                        "WORK EXPERIENCE",
                         style: pd.TextStyle(
                           color: PdfColors.black,
                           fontSize: 22,
@@ -497,7 +509,7 @@ async {
                         ),
                       ),
                       pd.Container(
-                        margin: pd.EdgeInsets.symmetric(horizontal: 30),
+                        // margin: pd.EdgeInsets.symmetric(horizontal: 30),
                         width: 290,
                         height: 4,
                         child: pd.Divider(
@@ -507,7 +519,7 @@ async {
                       ),
                       pd.SizedBox(height: 15),
                       pd.Text(
-                        "       CEO & President",
+                        "CEO & President",
                         style: pd.TextStyle(
                           color: PdfColors.black,
                           fontSize: 18,
@@ -515,7 +527,7 @@ async {
                       ),
                       pd.SizedBox(height: 5),
                       pd.Text(
-                        "       April 2030 - June 2033",
+                        "April 2030 - June 2033",
                         style: pd.TextStyle(
                           color: PdfColors.black,
                           fontSize: 18,
@@ -523,7 +535,7 @@ async {
                       ),
                       pd.SizedBox(height: 10),
                       pd.Text(
-                        "       Effectively managed team of over 270 \n       employees in 12 locations in 3 countries.\n       Oversaw executive leadership, company \n       training, and public relations with media.",
+                        "Effectively managed team of over 270 \nemployees in 12 locations in 3 countries.\nOversaw executive leadership, company \ntraining, and public relations with media.",
                         style: pd.TextStyle(
                           color: PdfColors.grey,
                           fontSize: 15,
@@ -532,7 +544,7 @@ async {
                       ),
                       pd.SizedBox(height: 20),
                       pd.Text(
-                        "     EDUCATION",
+                        "EDUCATION",
                         style: pd.TextStyle(
                           color: PdfColors.black,
                           fontSize: 22,
@@ -540,7 +552,7 @@ async {
                         ),
                       ),
                       pd.Container(
-                        margin: pd.EdgeInsets.symmetric(horizontal: 30),
+                        // margin: pd.EdgeInsets.symmetric(horizontal: 30),
                         width: 290,
                         height: 4,
                         child: pd.Divider(
@@ -550,7 +562,7 @@ async {
                       ),
                       pd.SizedBox(height: 20),
                       pd.Text(
-                        "      Bachelor of computer appilcation",
+                        "Bachelor of computer appilcation",
                         style: pd.TextStyle(
                           color: PdfColors.black,
                           fontSize: 18,
@@ -558,7 +570,7 @@ async {
                         ),
                       ),
                       pd.Text(
-                        "       BCA / Bachelor of computer appilcation\n       (computer appilcation)",
+                        "BCA / Bachelor of computer appilcation\n(computer appilcation)",
                         style: pd.TextStyle(
                           color: PdfColors.grey,
                           fontSize: 15,
@@ -567,7 +579,7 @@ async {
                       ),
                       pd.SizedBox(height: 20),
                       pd.Text(
-                        "     REFERENCE",
+                        "REFERENCE",
                         style: pd.TextStyle(
                           color: PdfColors.black,
                           fontSize: 22,
@@ -575,7 +587,7 @@ async {
                         ),
                       ),
                       pd.Container(
-                        margin: pd.EdgeInsets.symmetric(horizontal: 30),
+                        // margin: pd.EdgeInsets.symmetric(horizontal: 30),
                         width: 290,
                         height: 4,
                         child: pd.Divider(
@@ -584,22 +596,22 @@ async {
                         ),
                       ),
                       pd.SizedBox(height: 20),
-                      pd.Text("       NAME:- Aayush Maurya",style: pd.TextStyle(
+                      pd.Text("NAME:- Aayush Maurya",style: pd.TextStyle(
                         color: PdfColors.grey,
                         fontSize: 15,
 
                       ),),
-                      pd.Text("       RNW",style: pd.TextStyle(
+                      pd.Text("RNW",style: pd.TextStyle(
                         color: PdfColors.grey,
                         fontSize: 15,
 
                       ),),
-                      pd.Text("       Phone:- 9313220217",style: pd.TextStyle(
+                      pd.Text("Phone:- 9313220217",style: pd.TextStyle(
                         color: PdfColors.grey,
                         fontSize: 15,
 
                       ),),
-                      pd.Text("       NAME:- hello@123.com",style: pd.TextStyle(
+                      pd.Text("NAME:- hello@123.com",style: pd.TextStyle(
                         color: PdfColors.grey,
                         fontSize: 15,
 
