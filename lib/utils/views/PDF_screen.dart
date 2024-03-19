@@ -8,7 +8,6 @@ import 'package:printing/printing.dart';
 
 import 'Per_Screen.dart';
 
-
 class PDF extends StatefulWidget {
   const PDF({super.key});
 
@@ -28,10 +27,7 @@ class _PDFState extends State<PDF> {
   }
 }
 
-
-Future<Uint8List> generatePdf()
-async {
-
+Future<Uint8List> generatePdf() async {
   final pdf = pd.Document();
   // final imageProfile = pd.MemoryImage(imgPath!.readAsBytesSync());
   // final img = imageBytes;
@@ -55,407 +51,588 @@ async {
   final profile = pd.MemoryImage(imgPath!.readAsBytesSync());
   final Bytes3 = profile.bytes;
 
-  pd.Image image5 = pd.Image(pd.MemoryImage(Bytes3));
-
+  pd.Image image5 = pd.Image(pd.MemoryImage(Bytes3),
+      height: 150, width: 150, fit: pd.BoxFit.cover);
 
   pdf.addPage(
     pd.Page(
       pageFormat: PdfPageFormat.a4,
       build: (context) {
         return pd.Column(
-            mainAxisAlignment: pd.MainAxisAlignment.spaceEvenly,
+            // mainAxisAlignment: pd.MainAxisAlignment.spaceEvenly,
             children: [
               pd.Row(
-                crossAxisAlignment: pd.CrossAxisAlignment.start,
+                // crossAxisAlignment: pd.CrossAxisAlignment.start,
                 //  mainAxisAlignment: pd.MainAxisAlignment.start,
                 children: [
+                  pd.Column(children: [
+                    pd.Container(
+                        height: 720,
+                        width: 280,
+                        decoration: const pd.BoxDecoration(
+                          color: PdfColors.black,
+                        ),
+                        child: pd.Column(children: [
+                          // mainAxisAlignment: pd.MainAxisAlignment.center,
 
-                  pd.Column(
-                    children: [
-
-                        pd.Container(
-                          height: 720,
-                          width: 260,
-                          decoration: const pd.BoxDecoration(
-                            color: PdfColors.black,
+                          pd.Padding(
+                            padding: pd.EdgeInsets.fromLTRB(130, 50, 0, 0),
+                            child: pd.Container(
+                              height: 150,
+                              width: 150,
+                              decoration: pd.BoxDecoration(
+                                color: PdfColors.black,
+                                border: pd.Border.all(
+                                  color: PdfColors.white, // Change the color to your desired border color
+                                  width: 15, // Adjust the width of the border as needed
+                                ),
+                              ),
+                              child: image5, // Assuming image5 is a PDF image or widget
+                            ),
                           ),
-                          child: pd.Column(
-                            children: [
 
-                              pd.Padding(
-                                padding: pd.EdgeInsets.symmetric(vertical: 20),
-                                child: pd.Transform.rotate(angle: pi/2,child:  pd.Text('Hello',style: pd.TextStyle(
-                                    fontSize: 30,
-                                    color: PdfColors.white,
-                                )),)
+                          pd.Padding(
+                              padding: pd.EdgeInsets.fromLTRB(60, 20, 0, 0),
+                              child: pd.Text(
+                                resumeData.name!,
+                                style: pd.TextStyle(
+                                  color: PdfColors.white,
+                                  fontSize: 28,
+                                  fontWeight: pd.FontWeight.bold,
+                                ),
+                              )),
+
+                          pd.Padding(
+                              padding: pd.EdgeInsets.fromLTRB(100, 0, 0, 0),
+                              child: pd.Text('Flutter Developer',
+                                style: pd.TextStyle(
+                                  color: PdfColors.white,
+                                  fontSize: 22,
+                                ),
+                              )),
+
+                          pd.Row(
+                            crossAxisAlignment: pd.CrossAxisAlignment.center,
+                             mainAxisAlignment: pd.MainAxisAlignment.center,
+                            children: [
+                              pd.Container(
+                                margin: pd.EdgeInsets.fromLTRB(0, 15, 10, 0),
+                                width: 30, // Double the radius for diameter
+                                height: 30, // Double the radius for diameter
+                                decoration: pd.BoxDecoration(
+                                  shape: pd.BoxShape.circle,
+                                  color: PdfColors.red, // Change the color as needed
+                                ),
                               ),
 
+                              pd.Padding(
+                                  padding: pd.EdgeInsets.fromLTRB(0, 20, 0, 0),
+                                  child: pd.Text('About Me',
+                                    style: pd.TextStyle(
+                                      color: PdfColors.white,
+                                      fontSize: 28,
+                                      fontWeight: pd.FontWeight.bold,
+                                    ),
+                                  )),
 
 
+                            ],
+                          ),
 
-                            ]
-                          )
-                        ),
+                          pd.Padding(
+                              padding: pd.EdgeInsets.fromLTRB(100, 0, 0, 0),
+                              child: pd.Text('Flutter Developer'*8,
+                                style: pd.TextStyle(
+                                  color: PdfColors.grey,
+                                  fontSize: 12,
+                                ),
+                              )),
 
+                          pd.Row(
+                            crossAxisAlignment: pd.CrossAxisAlignment.center,
+                            mainAxisAlignment: pd.MainAxisAlignment.center,
+                            children: [
+                              pd.Container(
+                                margin: pd.EdgeInsets.fromLTRB(0, 15, 10, 0),
+                                width: 30, // Double the radius for diameter
+                                height: 30, // Double the radius for diameter
+                                decoration: pd.BoxDecoration(
+                                  shape: pd.BoxShape.circle,
+                                  color: PdfColors.red, // Change the color as needed
+                                ),
+                              ),
 
-
-                        // pd.Positioned(
-                        //   top: 50,
-                        //   left: 50,
-                        //   child: pd.Container(
-                        //     height: 150,
-                        //     width: 150,
-                        //     decoration: const pd.BoxDecoration(
-                        //       color: PdfColors.black,
-                        //       // shape: pd.BoxShape.circle,
-                        //     ),
-                        //     child: image5,
-                        //   ),
-                        // ),
-                        // pd.SizedBox(height: 100),
-
-                        // pd.Positioned(
-                        //   top: 200,
-                        //   left: 30,
-                        //   child: pd.Text(
-                        //     "CONTACT",
-                        //     style: pd.TextStyle(
-                        //       color: PdfColors.white,
-                        //       fontSize: 18,
-                        //       fontWeight: pd.FontWeight.bold,
-                        //     ),
-                        //   ),
-                        // ),
-                        //
-                        // pd.Positioned(
-                        //   top: 225,
-                        //   left: 30,
-                        //   child: pd.Container(
-                        //     width: 150,
-                        //     height: 4,
-                        //     child: pd.Divider(
-                        //       thickness: 4,
-                        //       color: PdfColors.white,
-                        //     ),
-                        //   ),
-                        // ),
-                        //
-                        // pd.Positioned(
-                        //   top: 240,
-                        //   left: 30,
-                        //   child: pd.Row(
-                        //     children: [
-                        //       pd.Container(
-                        //         height: 30,
-                        //         width: 30,
-                        //         decoration: pd.BoxDecoration(
-                        //           shape: pd.BoxShape.circle,
-                        //         ),
-                        //         child: image1,
-                        //       ),
-                        //       pd.SizedBox(width: 10),
-                        //       pd.Text(resumeData.phone!,
-                        //         style: pd.TextStyle(
-                        //           color: PdfColors.white,
-                        //           fontSize: 18,
-                        //           fontWeight: pd.FontWeight.bold,
-                        //         ),
-                        //       ),
-                        //     ],
-                        //   ),
-                        // ),
-                        // pd.Positioned(
-                        //   top: 280,
-                        //   left: 30,
-                        //   child: pd.Row(
-                        //     children: [
-                        //       pd.Container(
-                        //         height: 30,
-                        //         width: 30,
-                        //         decoration: pd.BoxDecoration(
-                        //           shape: pd.BoxShape.circle,
-                        //         ),
-                        //         child: image2,
-                        //       ),
-                        //       pd.SizedBox(width: 10),
-                        //       pd.Text(
-                        //         resumeData.email!,
-                        //         style: pd.TextStyle(
-                        //           color: PdfColors.white,
-                        //           fontSize: 18,
-                        //           fontWeight: pd.FontWeight.bold,
-                        //         ),
-                        //       ),
-                        //     ],
-                        //   ),
-                        // ),
-                        // pd.Positioned(
-                        //   top: 320,
-                        //   left: 30,
-                        //   child: pd.Row(
-                        //     children: [
-                        //       pd.Container(
-                        //         height: 30,
-                        //         width: 30,
-                        //         decoration: pd.BoxDecoration(
-                        //           shape: pd.BoxShape.circle,
-                        //         ),
-                        //         child: image3,
-                        //       ),
-                        //       pd.SizedBox(width: 10),
-                        //       pd.Text(
-                        //         "www.com",
-                        //         style: pd.TextStyle(
-                        //           color: PdfColors.white,
-                        //           fontSize: 18,
-                        //           fontWeight: pd.FontWeight.bold,
-                        //         ),
-                        //       ),
-                        //     ],
-                        //   ),
-                        // ),
-                        // pd.Positioned(
-                        //   top: 360,
-                        //   left: 30,
-                        //   child: pd.Row(
-                        //     children: [
-                        //       pd.Container(
-                        //         height: 30,
-                        //         width: 30,
-                        //         decoration: pd.BoxDecoration(
-                        //           shape: pd.BoxShape.circle,
-                        //         ),
-                        //         child: image4,
-                        //       ),
-                        //       pd.SizedBox(width: 10),
-                        //       pd.Text(
-                        //         resumeData.address!,
-                        //         style: pd.TextStyle(
-                        //           color: PdfColors.white,
-                        //           fontSize: 18,
-                        //           fontWeight: pd.FontWeight.bold,
-                        //         ),
-                        //       ),
-                        //     ],
-                        //   ),
-                        // ),
-                        // pd.Positioned(
-                        //   top: 400,
-                        //   left: 30,
-                        //   child: pd.Text(
-                        //     "SKILLS",
-                        //     style: pd.TextStyle(
-                        //       color: PdfColors.white,
-                        //       fontSize: 20,
-                        //       fontWeight: pd.FontWeight.bold,
-                        //     ),
-                        //   ),
-                        // ),
-                        //
-                        // pd.Positioned(
-                        //   top: 430,
-                        //   left: 30,
-                        //   child: pd.Container(
-                        //     width: 150,
-                        //     height: 4,
-                        //     child: pd.Divider(
-                        //       thickness: 4,
-                        //       color: PdfColors.white,
-                        //     ),
-                        //   ),
-                        // ),
-                        // pd.Positioned(
-                        //   top: 450,
-                        //   left: 30,
-                        //   child: pd.Row(
-                        //     children: [
-                        //       pd.SizedBox(width: 10),
-                        //       pd.Text(
-                        //         "- Team Work",
-                        //         style: pd.TextStyle(
-                        //           color: PdfColors.white,
-                        //           fontSize: 18,
-                        //           fontWeight: pd.FontWeight.bold,
-                        //         ),
-                        //       ),
-                        //     ],
-                        //   ),
-                        // ),
-                        // pd.Positioned(
-                        //   top: 470,
-                        //   left: 30,
-                        //   child: pd.Row(
-                        //     children: [
-                        //       pd.SizedBox(width: 10),
-                        //       pd.Text(
-                        //         "- Time Management",
-                        //         style: pd.TextStyle(
-                        //           color: PdfColors.white,
-                        //           fontSize: 18,
-                        //           fontWeight: pd.FontWeight.bold,
-                        //         ),
-                        //       ),
-                        //     ],
-                        //   ),
-                        // ),
-                        // pd.Positioned(
-                        //   top: 490,
-                        //   left: 30,
-                        //   child: pd.Row(
-                        //     children: [
-                        //       pd.SizedBox(width: 10),
-                        //       pd.Text(
-                        //         "- Leadership",
-                        //         style: pd.TextStyle(
-                        //           color: PdfColors.white,
-                        //           fontSize: 18,
-                        //           fontWeight: pd.FontWeight.bold,
-                        //         ),
-                        //       ),
-                        //     ],
-                        //   ),
-                        // ),
-                        // pd.Positioned(
-                        //   top: 510,
-                        //   left: 30,
-                        //   child: pd.Row(
-                        //     children: [
-                        //       pd.SizedBox(width: 10),
-                        //       pd.Text(
-                        //         "- Verble &Written ",
-                        //         style: pd.TextStyle(
-                        //           color: PdfColors.white,
-                        //           fontSize: 18,
-                        //           fontWeight: pd.FontWeight.bold,
-                        //         ),
-                        //       ),
-                        //     ],
-                        //   ),
-                        // ),
-                        // pd.Positioned(
-                        //   top: 530,
-                        //   left: 30,
-                        //   child: pd.Row(
-                        //     children: [
-                        //       pd.SizedBox(width: 10),
-                        //       pd.Text(
-                        //         "  Communication",
-                        //         style: pd.TextStyle(
-                        //           color: PdfColors.white,
-                        //           fontSize: 18,
-                        //           fontWeight: pd.FontWeight.bold,
-                        //         ),
-                        //       ),
-                        //     ],
-                        //   ),
-                        // ),
-                        // pd.Positioned(
-                        //   top: 560,
-                        //   left: 30,
-                        //   child: pd.Text(
-                        //     "language",
-                        //     style: pd.TextStyle(
-                        //       color: PdfColors.white,
-                        //       fontSize: 20,
-                        //       fontWeight: pd.FontWeight.bold,
-                        //     ),
-                        //   ),
-                        // ),
-                        //
-                        // pd.Positioned(
-                        //   top: 585,
-                        //   left: 30,
-                        //   child: pd.Container(
-                        //     width: 150,
-                        //     height: 4,
-                        //     child: pd.Divider(
-                        //       thickness: 4,
-                        //       color: PdfColors.white,
-                        //     ),
-                        //   ),
-                        // ),
-                        // pd.Positioned(
-                        //   top: 600,
-                        //   left: 30,
-                        //   child: pd.Row(
-                        //     children: [
-                        //       pd.SizedBox(width: 10),
-                        //       pd.Text(
-                        //         "- English",
-                        //         style: pd.TextStyle(
-                        //           color: PdfColors.white,
-                        //           fontSize: 18,
-                        //           fontWeight: pd.FontWeight.bold,
-                        //         ),
-                        //       ),
-                        //     ],
-                        //   ),
-                        // ),
-                        // pd.Positioned(
-                        //   top: 630,
-                        //   left: 30,
-                        //   child: pd.Row(
-                        //     children: [
-                        //       pd.SizedBox(width: 10),
-                        //       pd.Text(
-                        //         "- French",
-                        //         style: pd.TextStyle(
-                        //           color: PdfColors.white,
-                        //           fontSize: 18,
-                        //           fontWeight: pd.FontWeight.bold,
-                        //         ),
-                        //       ),
-                        //     ],
-                        //   ),
-                        // ),
-                        // pd.Positioned(
-                        //   top: 660,
-                        //   left: 30,
-                        //   child: pd.Row(
-                        //     children: [
-                        //       pd.SizedBox(width: 10),
-                        //       pd.Text(
-                        //         "- China",
-                        //         style: pd.TextStyle(
-                        //           color: PdfColors.white,
-                        //           fontSize: 18,
-                        //           fontWeight: pd.FontWeight.bold,
-                        //         ),
-                        //       ),
-                        //     ],
-                        //   ),
-                        // ),
-                        // pd.Positioned(
-                        //   top: 690,
-                        //   left: 30,
-                        //   child: pd.Row(
-                        //     children: [
-                        //       pd.SizedBox(width: 10),
-                        //       pd.Text(
-                        //         "- Spanish ",
-                        //         style: pd.TextStyle(
-                        //           color: PdfColors.white,
-                        //           fontSize: 18,
-                        //           fontWeight: pd.FontWeight.bold,
-                        //         ),
-                        //       ),
-                        //     ],
-                        //   ),
-                        // ),
+                              pd.Padding(
+                                  padding: pd.EdgeInsets.fromLTRB(0, 20, 0, 0),
+                                  child: pd.Text('Education',
+                                    style: pd.TextStyle(
+                                      color: PdfColors.white,
+                                      fontSize: 28,
+                                      fontWeight: pd.FontWeight.bold,
+                                    ),
+                                  )),
 
 
-                    ]
-                  ),
+                            ],
+                          ),
+
+                          pd.Padding(
+                              padding: pd.EdgeInsets.fromLTRB(80, 20, 0, 0),
+                              child: pd.Text('Swarnim Universuty',
+                                style: pd.TextStyle(
+                                  color: PdfColors.white,
+                                  fontSize: 18,
+                                  fontWeight: pd.FontWeight.bold,
+                                ),
+                              )),
+
+                          pd.Padding(
+                              padding: pd.EdgeInsets.fromLTRB(10, 5, 0, 0),
+                              child: pd.Text('Bachlor degree',
+                                style: pd.TextStyle(
+                                  color: PdfColors.white,
+                                  fontSize: 15,
+                                  // fontWeight: pd.FontWeight.bold,
+                                ),
+                              )),
+
+                          pd.Padding(
+                              padding: pd.EdgeInsets.fromLTRB(-20, 5, 0, 0),
+                              child: pd.Text('2005 - 2008',
+                                style: pd.TextStyle(
+                                  color: PdfColors.white,
+                                  fontSize: 13,
+                                  // fontWeight: pd.FontWeight.bold,
+                                ),
+                              )),
+
+                          pd.Row(
+                            crossAxisAlignment: pd.CrossAxisAlignment.center,
+                            mainAxisAlignment: pd.MainAxisAlignment.center,
+                            children: [
+                              pd.Container(
+                                margin: pd.EdgeInsets.fromLTRB(0, 15, 10, 0),
+                                width: 30, // Double the radius for diameter
+                                height: 30, // Double the radius for diameter
+                                decoration: pd.BoxDecoration(
+                                  shape: pd.BoxShape.circle,
+                                  color: PdfColors.red, // Change the color as needed
+                                ),
+                              ),
+
+                              pd.Padding(
+                                  padding: pd.EdgeInsets.fromLTRB(0, 20, 0, 0),
+                                  child: pd.Text('Skills      ',
+                                    style: pd.TextStyle(
+                                      color: PdfColors.white,
+                                      fontSize: 28,
+                                      fontWeight: pd.FontWeight.bold,
+                                    ),
+                                  )),
+
+
+                            ],
+                          ),
+
+
+                          pd.Padding(
+                              padding: pd.EdgeInsets.fromLTRB(-20, 5, 0, 0),
+                              child: pd.Text('Flutter',
+                                style: pd.TextStyle(
+                                  color: PdfColors.white,
+                                  fontSize: 18,
+                                  // fontWeight: pd.FontWeight.bold,
+                                ),
+                              )),
+
+                          // Adjust the borderRadius as needed
+                        ])),
+
+                    // pd.Positioned(
+                    //   top: 50,
+                    //   left: 50,
+                    //   child: pd.Container(
+                    //     height: 150,
+                    //     width: 150,
+                    //     decoration: const pd.BoxDecoration(
+                    //       color: PdfColors.black,
+                    //       // shape: pd.BoxShape.circle,
+                    //     ),
+                    //     child: image5,
+                    //   ),
+                    // ),
+                    // pd.SizedBox(height: 100),
+
+                    // pd.Positioned(
+                    //   top: 200,
+                    //   left: 30,
+                    //   child: pd.Text(
+                    //     "CONTACT",
+                    //     style: pd.TextStyle(
+                    //       color: PdfColors.white,
+                    //       fontSize: 18,
+                    //       fontWeight: pd.FontWeight.bold,
+                    //     ),
+                    //   ),
+                    // ),
+                    //
+                    // pd.Positioned(
+                    //   top: 225,
+                    //   left: 30,
+                    //   child: pd.Container(
+                    //     width: 150,
+                    //     height: 4,
+                    //     child: pd.Divider(
+                    //       thickness: 4,
+                    //       color: PdfColors.white,
+                    //     ),
+                    //   ),
+                    // ),
+                    //
+                    // pd.Positioned(
+                    //   top: 240,
+                    //   left: 30,
+                    //   child: pd.Row(
+                    //     children: [
+                    //       pd.Container(
+                    //         height: 30,
+                    //         width: 30,
+                    //         decoration: pd.BoxDecoration(
+                    //           shape: pd.BoxShape.circle,
+                    //         ),
+                    //         child: image1,
+                    //       ),
+                    //       pd.SizedBox(width: 10),
+                    //       pd.Text(resumeData.phone!,
+                    //         style: pd.TextStyle(
+                    //           color: PdfColors.white,
+                    //           fontSize: 18,
+                    //           fontWeight: pd.FontWeight.bold,
+                    //         ),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
+                    // pd.Positioned(
+                    //   top: 280,
+                    //   left: 30,
+                    //   child: pd.Row(
+                    //     children: [
+                    //       pd.Container(
+                    //         height: 30,
+                    //         width: 30,
+                    //         decoration: pd.BoxDecoration(
+                    //           shape: pd.BoxShape.circle,
+                    //         ),
+                    //         child: image2,
+                    //       ),
+                    //       pd.SizedBox(width: 10),
+                    //       pd.Text(
+                    //         resumeData.email!,
+                    //         style: pd.TextStyle(
+                    //           color: PdfColors.white,
+                    //           fontSize: 18,
+                    //           fontWeight: pd.FontWeight.bold,
+                    //         ),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
+                    // pd.Positioned(
+                    //   top: 320,
+                    //   left: 30,
+                    //   child: pd.Row(
+                    //     children: [
+                    //       pd.Container(
+                    //         height: 30,
+                    //         width: 30,
+                    //         decoration: pd.BoxDecoration(
+                    //           shape: pd.BoxShape.circle,
+                    //         ),
+                    //         child: image3,
+                    //       ),
+                    //       pd.SizedBox(width: 10),
+                    //       pd.Text(
+                    //         "www.com",
+                    //         style: pd.TextStyle(
+                    //           color: PdfColors.white,
+                    //           fontSize: 18,
+                    //           fontWeight: pd.FontWeight.bold,
+                    //         ),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
+                    // pd.Positioned(
+                    //   top: 360,
+                    //   left: 30,
+                    //   child: pd.Row(
+                    //     children: [
+                    //       pd.Container(
+                    //         height: 30,
+                    //         width: 30,
+                    //         decoration: pd.BoxDecoration(
+                    //           shape: pd.BoxShape.circle,
+                    //         ),
+                    //         child: image4,
+                    //       ),
+                    //       pd.SizedBox(width: 10),
+                    //       pd.Text(
+                    //         resumeData.address!,
+                    //         style: pd.TextStyle(
+                    //           color: PdfColors.white,
+                    //           fontSize: 18,
+                    //           fontWeight: pd.FontWeight.bold,
+                    //         ),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
+                    // pd.Positioned(
+                    //   top: 400,
+                    //   left: 30,
+                    //   child: pd.Text(
+                    //     "SKILLS",
+                    //     style: pd.TextStyle(
+                    //       color: PdfColors.white,
+                    //       fontSize: 20,
+                    //       fontWeight: pd.FontWeight.bold,
+                    //     ),
+                    //   ),
+                    // ),
+                    //
+                    // pd.Positioned(
+                    //   top: 430,
+                    //   left: 30,
+                    //   child: pd.Container(
+                    //     width: 150,
+                    //     height: 4,
+                    //     child: pd.Divider(
+                    //       thickness: 4,
+                    //       color: PdfColors.white,
+                    //     ),
+                    //   ),
+                    // ),
+                    // pd.Positioned(
+                    //   top: 450,
+                    //   left: 30,
+                    //   child: pd.Row(
+                    //     children: [
+                    //       pd.SizedBox(width: 10),
+                    //       pd.Text(
+                    //         "- Team Work",
+                    //         style: pd.TextStyle(
+                    //           color: PdfColors.white,
+                    //           fontSize: 18,
+                    //           fontWeight: pd.FontWeight.bold,
+                    //         ),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
+                    // pd.Positioned(
+                    //   top: 470,
+                    //   left: 30,
+                    //   child: pd.Row(
+                    //     children: [
+                    //       pd.SizedBox(width: 10),
+                    //       pd.Text(
+                    //         "- Time Management",
+                    //         style: pd.TextStyle(
+                    //           color: PdfColors.white,
+                    //           fontSize: 18,
+                    //           fontWeight: pd.FontWeight.bold,
+                    //         ),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
+                    // pd.Positioned(
+                    //   top: 490,
+                    //   left: 30,
+                    //   child: pd.Row(
+                    //     children: [
+                    //       pd.SizedBox(width: 10),
+                    //       pd.Text(
+                    //         "- Leadership",
+                    //         style: pd.TextStyle(
+                    //           color: PdfColors.white,
+                    //           fontSize: 18,
+                    //           fontWeight: pd.FontWeight.bold,
+                    //         ),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
+                    // pd.Positioned(
+                    //   top: 510,
+                    //   left: 30,
+                    //   child: pd.Row(
+                    //     children: [
+                    //       pd.SizedBox(width: 10),
+                    //       pd.Text(
+                    //         "- Verble &Written ",
+                    //         style: pd.TextStyle(
+                    //           color: PdfColors.white,
+                    //           fontSize: 18,
+                    //           fontWeight: pd.FontWeight.bold,
+                    //         ),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
+                    // pd.Positioned(
+                    //   top: 530,
+                    //   left: 30,
+                    //   child: pd.Row(
+                    //     children: [
+                    //       pd.SizedBox(width: 10),
+                    //       pd.Text(
+                    //         "  Communication",
+                    //         style: pd.TextStyle(
+                    //           color: PdfColors.white,
+                    //           fontSize: 18,
+                    //           fontWeight: pd.FontWeight.bold,
+                    //         ),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
+                    // pd.Positioned(
+                    //   top: 560,
+                    //   left: 30,
+                    //   child: pd.Text(
+                    //     "language",
+                    //     style: pd.TextStyle(
+                    //       color: PdfColors.white,
+                    //       fontSize: 20,
+                    //       fontWeight: pd.FontWeight.bold,
+                    //     ),
+                    //   ),
+                    // ),
+                    //
+                    // pd.Positioned(
+                    //   top: 585,
+                    //   left: 30,
+                    //   child: pd.Container(
+                    //     width: 150,
+                    //     height: 4,
+                    //     child: pd.Divider(
+                    //       thickness: 4,
+                    //       color: PdfColors.white,
+                    //     ),
+                    //   ),
+                    // ),
+                    // pd.Positioned(
+                    //   top: 600,
+                    //   left: 30,
+                    //   child: pd.Row(
+                    //     children: [
+                    //       pd.SizedBox(width: 10),
+                    //       pd.Text(
+                    //         "- English",
+                    //         style: pd.TextStyle(
+                    //           color: PdfColors.white,
+                    //           fontSize: 18,
+                    //           fontWeight: pd.FontWeight.bold,
+                    //         ),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
+                    // pd.Positioned(
+                    //   top: 630,
+                    //   left: 30,
+                    //   child: pd.Row(
+                    //     children: [
+                    //       pd.SizedBox(width: 10),
+                    //       pd.Text(
+                    //         "- French",
+                    //         style: pd.TextStyle(
+                    //           color: PdfColors.white,
+                    //           fontSize: 18,
+                    //           fontWeight: pd.FontWeight.bold,
+                    //         ),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
+                    // pd.Positioned(
+                    //   top: 660,
+                    //   left: 30,
+                    //   child: pd.Row(
+                    //     children: [
+                    //       pd.SizedBox(width: 10),
+                    //       pd.Text(
+                    //         "- China",
+                    //         style: pd.TextStyle(
+                    //           color: PdfColors.white,
+                    //           fontSize: 18,
+                    //           fontWeight: pd.FontWeight.bold,
+                    //         ),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
+                    // pd.Positioned(
+                    //   top: 690,
+                    //   left: 30,
+                    //   child: pd.Row(
+                    //     children: [
+                    //       pd.SizedBox(width: 10),
+                    //       pd.Text(
+                    //         "- Spanish ",
+                    //         style: pd.TextStyle(
+                    //           color: PdfColors.white,
+                    //           fontSize: 18,
+                    //           fontWeight: pd.FontWeight.bold,
+                    //         ),
+                    //       ),
+                    //     ],
+                    //   ),
+                    // ),
+                  ]),
 
                   pd.SizedBox(width: 20),
 
+                  pd.Column(
+                    mainAxisAlignment: pd.MainAxisAlignment.start,
+                    children: [
+                      pd.Container(
+                        margin: pd.EdgeInsets.fromLTRB(0, 0, 0, 0),
+                        width: 30, // Double the radius for diameter
+                        height: 30, // Double the radius for diameter
+                        decoration: pd.BoxDecoration(
+                          shape: pd.BoxShape.circle,
+                          color: PdfColors.red, // Change the color as needed
+                        ),
+                      ),
+                      pd.Container(
+                        width: 2, // Width of the vertical divider
+                        height: 30, // Height of the vertical divider
+                        color: PdfColors.red, // Color of the vertical divider
+                      ),
+                      pd.Container(
+                        margin: pd.EdgeInsets.fromLTRB(0, 0, 0, 0),
+                        width: 30, // Double the radius for diameter
+                        height: 30, // Double the radius for diameter
+                        decoration: pd.BoxDecoration(
+                          shape: pd.BoxShape.circle,
+                          color: PdfColors.blue, // Change the color as needed
+                        ),
+                      ),
+                    ],
+                  ),
+
+
+                  pd.SizedBox(width: 20),
 
                   pd.Column(
                     // mainAxisAlignment: pd.MainAxisAlignment.start,
                     crossAxisAlignment: pd.CrossAxisAlignment.start,
                     children: [
                       pd.Text(
-                       resumeData.name!,
+                        resumeData.name!,
                         style: pd.TextStyle(
                           color: PdfColors.black,
                           fontSize: 35,
@@ -491,8 +668,7 @@ async {
                       ),
                       pd.SizedBox(height: 15),
                       pd.Text(
-                        "I am a growth hacker with 4+ years of \nexperience in sales and marketing in the \nUS market.\n"
-                        ,
+                        "I am a growth hacker with 4+ years of \nexperience in sales and marketing in the \nUS market.\n",
                         style: pd.TextStyle(
                           color: PdfColors.grey,
                           fontSize: 15,
@@ -566,7 +742,6 @@ async {
                         style: pd.TextStyle(
                           color: PdfColors.black,
                           fontSize: 18,
-
                         ),
                       ),
                       pd.Text(
@@ -574,7 +749,6 @@ async {
                         style: pd.TextStyle(
                           color: PdfColors.grey,
                           fontSize: 15,
-
                         ),
                       ),
                       pd.SizedBox(height: 20),
@@ -596,33 +770,42 @@ async {
                         ),
                       ),
                       pd.SizedBox(height: 20),
-                      pd.Text("NAME:- Aayush Maurya",style: pd.TextStyle(
-                        color: PdfColors.grey,
-                        fontSize: 15,
-
-                      ),),
-                      pd.Text("RNW",style: pd.TextStyle(
-                        color: PdfColors.grey,
-                        fontSize: 15,
-
-                      ),),
-                      pd.Text("Phone:- 9313220217",style: pd.TextStyle(
-                        color: PdfColors.grey,
-                        fontSize: 15,
-
-                      ),),
-                      pd.Text("NAME:- hello@123.com",style: pd.TextStyle(
-                        color: PdfColors.grey,
-                        fontSize: 15,
-
-                      ),),
+                      pd.Text(
+                        "NAME:- Aayush Maurya",
+                        style: pd.TextStyle(
+                          color: PdfColors.grey,
+                          fontSize: 15,
+                        ),
+                      ),
+                      pd.Text(
+                        "RNW",
+                        style: pd.TextStyle(
+                          color: PdfColors.grey,
+                          fontSize: 15,
+                        ),
+                      ),
+                      pd.Text(
+                        "Phone:- 9313220217",
+                        style: pd.TextStyle(
+                          color: PdfColors.grey,
+                          fontSize: 15,
+                        ),
+                      ),
+                      pd.Text(
+                        "NAME:- hello@123.com",
+                        style: pd.TextStyle(
+                          color: PdfColors.grey,
+                          fontSize: 15,
+                        ),
+                      ),
                     ],
                   ),
                 ],
               )
             ]);
       },
-    ),);
+    ),
+  );
 
   // await Printing.layoutPdf(onLayout: (format) => pdf.save(),);
   return await pdf.save();
