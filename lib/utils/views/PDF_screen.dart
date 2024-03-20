@@ -32,21 +32,21 @@ Future<Uint8List> generatePdf() async {
   // final imageProfile = pd.MemoryImage(imgPath!.readAsBytesSync());
   // final img = imageBytes;
 
-  final img = await rootBundle.load('assets/call.jpg');
-  final imageBytes = img.buffer.asUint8List();
-  pd.Image image1 = pd.Image(pd.MemoryImage(imageBytes));
-
-  final img2 = await rootBundle.load('assets/mail.jpg');
-  final Bytes = img2.buffer.asUint8List();
-  pd.Image image2 = pd.Image(pd.MemoryImage(Bytes));
-
-  final img3 = await rootBundle.load('assets/website.jpg');
-  final Bytes1 = img3.buffer.asUint8List();
-  pd.Image image3 = pd.Image(pd.MemoryImage(Bytes1));
-
-  final img4 = await rootBundle.load('assets/home.webp');
-  final Bytes2 = img4.buffer.asUint8List();
-  pd.Image image4 = pd.Image(pd.MemoryImage(Bytes2));
+  // final img = await rootBundle.load('assets/call.jpg');
+  // final imageBytes = img.buffer.asUint8List();
+  // pd.Image image1 = pd.Image(pd.MemoryImage(imageBytes));
+  //
+  // final img2 = await rootBundle.load('assets/mail.jpg');
+  // final Bytes = img2.buffer.asUint8List();
+  // pd.Image image2 = pd.Image(pd.MemoryImage(Bytes));
+  //
+  // final img3 = await rootBundle.load('assets/website.jpg');
+  // final Bytes1 = img3.buffer.asUint8List();
+  // pd.Image image3 = pd.Image(pd.MemoryImage(Bytes1));
+  //
+  // final img4 = await rootBundle.load('assets/home.webp');
+  // final Bytes2 = img4.buffer.asUint8List();
+  // pd.Image image4 = pd.Image(pd.MemoryImage(Bytes2));
 
   final profile = pd.MemoryImage(imgPath!.readAsBytesSync());
   final Bytes3 = profile.bytes;
@@ -758,7 +758,6 @@ Future<Uint8List> generatePdf() async {
                         style: pd.TextStyle(
                           color: PdfColors.grey,
                           fontSize: 15,
-                          //  fontWeight: pd.FontWeight.bold,
                         ),
                       ),
                       pd.SizedBox(height: 20),
@@ -771,7 +770,6 @@ Future<Uint8List> generatePdf() async {
                         ),
                       ),
                       pd.Container(
-                        // margin: pd.EdgeInsets.symmetric(horizontal: 30),
                         width: 290,
                         height: 4,
                         child: pd.Divider(

@@ -87,7 +87,7 @@ class _Experience_ScreenState extends State<Experience_Screen> {
                         focusedBorder: OutlineInputBorder(
                             borderSide: const BorderSide(color: Colors.white),
                             borderRadius: BorderRadius.circular(20)),
-                        // contentPadding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
+
                       ),
                     ),
                   ),
@@ -110,7 +110,7 @@ class _Experience_ScreenState extends State<Experience_Screen> {
                         focusedBorder: OutlineInputBorder(
                             borderSide: const BorderSide(color: Colors.white),
                             borderRadius: BorderRadius.circular(20)),
-                        // contentPadding: const EdgeInsets.symmetric(vertical: 25, horizontal: 20),
+
                       ),
                     ),
                   ),

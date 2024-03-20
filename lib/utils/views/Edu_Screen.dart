@@ -27,7 +27,7 @@ class _EduInfoState extends State<EduInfo> {
               });
             },
             child: Container(
-              padding: EdgeInsets.symmetric(horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               height: 50,
               width: double.infinity,
               decoration: BoxDecoration(
