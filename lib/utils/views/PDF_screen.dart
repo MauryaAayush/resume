@@ -246,6 +246,26 @@ Future<Uint8List> generatePdf() async {
                                   // fontWeight: pd.FontWeight.bold,
                                 ),
                               )),
+                          pd.Padding(
+                              padding: pd.EdgeInsets.fromLTRB(-20, 5, 0, 0),
+                              child: pd.Text(
+                                'Dart',
+                                style: pd.TextStyle(
+                                  color: PdfColors.white,
+                                  fontSize: 18,
+                                  // fontWeight: pd.FontWeight.bold,
+                                ),
+                              )),
+                          pd.Padding(
+                              padding: pd.EdgeInsets.fromLTRB(-20, 5, 0, 0),
+                              child: pd.Text(
+                                'Photoshop',
+                                style: pd.TextStyle(
+                                  color: PdfColors.white,
+                                  fontSize: 18,
+                                  // fontWeight: pd.FontWeight.bold,
+                                ),
+                              )),
 
                           // Adjust the borderRadius as needed
                         ])),
@@ -814,28 +834,22 @@ Future<Uint8List> generatePdf() async {
                       ),
                       pd.SizedBox(height: 20),
                       pd.Text(
-                        "NAME:- Aayush Maurya",
+                        "NAME:- Ratan Tata",
+                        style: pd.TextStyle(
+                          color: PdfColors.grey,
+                          fontSize: 15,
+                        ),
+                      ),
+
+                      pd.Text(
+                        "Phone:- 8604949240",
                         style: pd.TextStyle(
                           color: PdfColors.grey,
                           fontSize: 15,
                         ),
                       ),
                       pd.Text(
-                        "RNW",
-                        style: pd.TextStyle(
-                          color: PdfColors.grey,
-                          fontSize: 15,
-                        ),
-                      ),
-                      pd.Text(
-                        "Phone:- 9313220217",
-                        style: pd.TextStyle(
-                          color: PdfColors.grey,
-                          fontSize: 15,
-                        ),
-                      ),
-                      pd.Text(
-                        "NAME:- hello@123.com",
+                        "NAME:- TCS.com",
                         style: pd.TextStyle(
                           color: PdfColors.grey,
                           fontSize: 15,
