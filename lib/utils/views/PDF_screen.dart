@@ -68,7 +68,7 @@ Future<Uint8List> generatePdf() async {
                   pd.Column(children: [
                     pd.Container(
                         height: 720,
-                        width: 280,
+                        width: 260,
                         decoration: const pd.BoxDecoration(
                           color: PdfColors.black,
                         ),
@@ -76,7 +76,7 @@ Future<Uint8List> generatePdf() async {
                           // mainAxisAlignment: pd.MainAxisAlignment.center,
 
                           pd.Padding(
-                            padding: pd.EdgeInsets.fromLTRB(130, 50, 0, 0),
+                            padding: pd.EdgeInsets.fromLTRB(110, 50, 0, 0),
                             child: pd.Container(
                               height: 150,
                               width: 150,
@@ -92,7 +92,7 @@ Future<Uint8List> generatePdf() async {
                           ),
 
                           pd.Padding(
-                              padding: pd.EdgeInsets.fromLTRB(60, 20, 0, 0),
+                              padding: pd.EdgeInsets.fromLTRB(50, 20, 0, 0),
                               child: pd.Text(
                                 resumeData.name!,
                                 style: pd.TextStyle(
@@ -103,7 +103,7 @@ Future<Uint8List> generatePdf() async {
                               )),
 
                           pd.Padding(
-                              padding: pd.EdgeInsets.fromLTRB(100, 0, 0, 0),
+                              padding: pd.EdgeInsets.fromLTRB(90, 0, 0, 0),
                               child: pd.Text('Flutter Developer',
                                 style: pd.TextStyle(
                                   color: PdfColors.white,
@@ -595,37 +595,80 @@ Future<Uint8List> generatePdf() async {
 
                   pd.SizedBox(width: 20),
 
-                  pd.Column(
-                    mainAxisAlignment: pd.MainAxisAlignment.start,
-                    children: [
-                      pd.Container(
-                        margin: pd.EdgeInsets.fromLTRB(0, 0, 0, 0),
-                        width: 30, // Double the radius for diameter
-                        height: 30, // Double the radius for diameter
-                        decoration: pd.BoxDecoration(
-                          shape: pd.BoxShape.circle,
-                          color: PdfColors.red, // Change the color as needed
-                        ),
-                      ),
-                      pd.Container(
-                        width: 2, // Width of the vertical divider
-                        height: 30, // Height of the vertical divider
-                        color: PdfColors.red, // Color of the vertical divider
-                      ),
-                      pd.Container(
-                        margin: pd.EdgeInsets.fromLTRB(0, 0, 0, 0),
-                        width: 30, // Double the radius for diameter
-                        height: 30, // Double the radius for diameter
-                        decoration: pd.BoxDecoration(
-                          shape: pd.BoxShape.circle,
-                          color: PdfColors.blue, // Change the color as needed
-                        ),
-                      ),
-                    ],
-                  ),
-
-
-                  pd.SizedBox(width: 20),
+                  // pd.Column(
+                  //   mainAxisAlignment: pd.MainAxisAlignment.end,
+                  //   // crossAxisAlignment: pd.CrossAxisAlignment.start,
+                  //   children: [
+                  //     pd.Container(
+                  //       margin: pd.EdgeInsets.fromLTRB(0, 0, 0, 0),
+                  //       width: 30, // Double the radius for diameter
+                  //       height: 30, // Double the radius for diameter
+                  //       decoration: pd.BoxDecoration(
+                  //         shape: pd.BoxShape.circle,
+                  //         color: PdfColors.red, // Change the color as needed
+                  //       ),
+                  //     ),
+                  //     pd.Container(
+                  //       width: 2, // Width of the vertical divider
+                  //       height: 30, // Height of the vertical divider
+                  //       color: PdfColors.red, // Color of the vertical divider
+                  //     ),
+                  //     pd.Container(
+                  //       margin: pd.EdgeInsets.fromLTRB(0, 0, 0, 0),
+                  //       width: 15, // Double the radius for diameter
+                  //       height: 15, // Double the radius for diameter
+                  //       decoration: pd.BoxDecoration(
+                  //         shape: pd.BoxShape.circle,
+                  //         color: PdfColors.blue, // Change the color as needed
+                  //       ),
+                  //     ),
+                  //     pd.Container(
+                  //       width: 2, // Width of the vertical divider
+                  //       height: 30, // Height of the vertical divider
+                  //       color: PdfColors.red, // Color of the vertical divider
+                  //     ),
+                  //     pd.Container(
+                  //       margin: pd.EdgeInsets.fromLTRB(0, 0, 0, 0),
+                  //       width: 15, // Double the radius for diameter
+                  //       height: 15, // Double the radius for diameter
+                  //       decoration: pd.BoxDecoration(
+                  //         shape: pd.BoxShape.circle,
+                  //         color: PdfColors.blue, // Change the color as needed
+                  //       ),
+                  //     ),
+                  //     pd.Container(
+                  //       width: 2, // Width of the vertical divider
+                  //       height: 30, // Height of the vertical divider
+                  //       color: PdfColors.red, // Color of the vertical divider
+                  //     ),
+                  //     pd.Container(
+                  //       margin: pd.EdgeInsets.fromLTRB(0, 0, 0, 0),
+                  //       width: 15, // Double the radius for diameter
+                  //       height: 15, // Double the radius for diameter
+                  //       decoration: pd.BoxDecoration(
+                  //         shape: pd.BoxShape.circle,
+                  //         color: PdfColors.blue, // Change the color as needed
+                  //       ),
+                  //     ),
+                  //     pd.Container(
+                  //       width: 2, // Width of the vertical divider
+                  //       height: 30, // Height of the vertical divider
+                  //       color: PdfColors.red, // Color of the vertical divider
+                  //     ),
+                  //     pd.Container(
+                  //       margin: pd.EdgeInsets.fromLTRB(0, 0, 0, 0),
+                  //       width: 15, // Double the radius for diameter
+                  //       height: 15, // Double the radius for diameter
+                  //       decoration: pd.BoxDecoration(
+                  //         shape: pd.BoxShape.circle,
+                  //         color: PdfColors.blue, // Change the color as needed
+                  //       ),
+                  //     ),
+                  //   ],
+                  // ),
+                  //
+                  //
+                  // pd.SizedBox(width: 20),
 
                   pd.Column(
                     // mainAxisAlignment: pd.MainAxisAlignment.start,
