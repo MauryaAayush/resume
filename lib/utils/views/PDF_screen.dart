@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pdf/pdf.dart';
@@ -73,8 +72,6 @@ Future<Uint8List> generatePdf() async {
                           color: PdfColors.black,
                         ),
                         child: pd.Column(children: [
-                          // mainAxisAlignment: pd.MainAxisAlignment.center,
-
                           pd.Padding(
                             padding: pd.EdgeInsets.fromLTRB(110, 50, 0, 0),
                             child: pd.Container(
@@ -83,11 +80,14 @@ Future<Uint8List> generatePdf() async {
                               decoration: pd.BoxDecoration(
                                 color: PdfColors.black,
                                 border: pd.Border.all(
-                                  color: PdfColors.white, // Change the color to your desired border color
-                                  width: 15, // Adjust the width of the border as needed
+                                  color: PdfColors.white,
+                                  // Change the color to your desired border color
+                                  width:
+                                      15, // Adjust the width of the border as needed
                                 ),
                               ),
-                              child: image5, // Assuming image5 is a PDF image or widget
+                              child:
+                                  image5, // Assuming image5 is a PDF image or widget
                             ),
                           ),
 
@@ -104,7 +104,8 @@ Future<Uint8List> generatePdf() async {
 
                           pd.Padding(
                               padding: pd.EdgeInsets.fromLTRB(90, 0, 0, 0),
-                              child: pd.Text('Flutter Developer',
+                              child: pd.Text(
+                                'Flutter Developer',
                                 style: pd.TextStyle(
                                   color: PdfColors.white,
                                   fontSize: 22,
@@ -113,7 +114,7 @@ Future<Uint8List> generatePdf() async {
 
                           pd.Row(
                             crossAxisAlignment: pd.CrossAxisAlignment.center,
-                             mainAxisAlignment: pd.MainAxisAlignment.center,
+                            mainAxisAlignment: pd.MainAxisAlignment.center,
                             children: [
                               pd.Container(
                                 margin: pd.EdgeInsets.fromLTRB(0, 15, 10, 0),
@@ -121,27 +122,27 @@ Future<Uint8List> generatePdf() async {
                                 height: 30, // Double the radius for diameter
                                 decoration: pd.BoxDecoration(
                                   shape: pd.BoxShape.circle,
-                                  color: PdfColors.red, // Change the color as needed
+                                  color: PdfColors
+                                      .red, // Change the color as needed
                                 ),
                               ),
-
                               pd.Padding(
                                   padding: pd.EdgeInsets.fromLTRB(0, 20, 0, 0),
-                                  child: pd.Text('About Me',
+                                  child: pd.Text(
+                                    'About Me',
                                     style: pd.TextStyle(
                                       color: PdfColors.white,
                                       fontSize: 28,
                                       fontWeight: pd.FontWeight.bold,
                                     ),
                                   )),
-
-
                             ],
                           ),
 
                           pd.Padding(
                               padding: pd.EdgeInsets.fromLTRB(100, 0, 0, 0),
-                              child: pd.Text('Flutter Developer'*8,
+                              child: pd.Text(
+                                'Flutter Developer' * 8,
                                 style: pd.TextStyle(
                                   color: PdfColors.grey,
                                   fontSize: 12,
@@ -158,27 +159,27 @@ Future<Uint8List> generatePdf() async {
                                 height: 30, // Double the radius for diameter
                                 decoration: pd.BoxDecoration(
                                   shape: pd.BoxShape.circle,
-                                  color: PdfColors.red, // Change the color as needed
+                                  color: PdfColors
+                                      .red, // Change the color as needed
                                 ),
                               ),
-
                               pd.Padding(
                                   padding: pd.EdgeInsets.fromLTRB(0, 20, 0, 0),
-                                  child: pd.Text('Education',
+                                  child: pd.Text(
+                                    'Education',
                                     style: pd.TextStyle(
                                       color: PdfColors.white,
                                       fontSize: 28,
                                       fontWeight: pd.FontWeight.bold,
                                     ),
                                   )),
-
-
                             ],
                           ),
 
                           pd.Padding(
                               padding: pd.EdgeInsets.fromLTRB(80, 20, 0, 0),
-                              child: pd.Text('Swarnim Universuty',
+                              child: pd.Text(
+                                'Swarnim Universuty',
                                 style: pd.TextStyle(
                                   color: PdfColors.white,
                                   fontSize: 18,
@@ -188,7 +189,8 @@ Future<Uint8List> generatePdf() async {
 
                           pd.Padding(
                               padding: pd.EdgeInsets.fromLTRB(10, 5, 0, 0),
-                              child: pd.Text('Bachlor degree',
+                              child: pd.Text(
+                                'Bachlor degree',
                                 style: pd.TextStyle(
                                   color: PdfColors.white,
                                   fontSize: 15,
@@ -198,7 +200,8 @@ Future<Uint8List> generatePdf() async {
 
                           pd.Padding(
                               padding: pd.EdgeInsets.fromLTRB(-20, 5, 0, 0),
-                              child: pd.Text('2005 - 2008',
+                              child: pd.Text(
+                                '2005 - 2008',
                                 style: pd.TextStyle(
                                   color: PdfColors.white,
                                   fontSize: 13,
@@ -216,28 +219,27 @@ Future<Uint8List> generatePdf() async {
                                 height: 30, // Double the radius for diameter
                                 decoration: pd.BoxDecoration(
                                   shape: pd.BoxShape.circle,
-                                  color: PdfColors.red, // Change the color as needed
+                                  color: PdfColors
+                                      .red, // Change the color as needed
                                 ),
                               ),
-
                               pd.Padding(
                                   padding: pd.EdgeInsets.fromLTRB(0, 20, 0, 0),
-                                  child: pd.Text('Skills      ',
+                                  child: pd.Text(
+                                    'Skills      ',
                                     style: pd.TextStyle(
                                       color: PdfColors.white,
                                       fontSize: 28,
                                       fontWeight: pd.FontWeight.bold,
                                     ),
                                   )),
-
-
                             ],
                           ),
 
-
                           pd.Padding(
                               padding: pd.EdgeInsets.fromLTRB(-20, 5, 0, 0),
-                              child: pd.Text('Flutter',
+                              child: pd.Text(
+                                'Flutter',
                                 style: pd.TextStyle(
                                   color: PdfColors.white,
                                   fontSize: 18,
