@@ -1,4 +1,3 @@
-import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -29,6 +28,7 @@ class _PDFState extends State<PDF> {
 
 Future<Uint8List> generatePdf() async {
   final pdf = pd.Document();
+
   // final imageProfile = pd.MemoryImage(imgPath!.readAsBytesSync());
   // final img = imageBytes;
 
