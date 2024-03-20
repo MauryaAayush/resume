@@ -17,7 +17,12 @@
 <img src = "https://github.com/MauryaAayush/resume/assets/143180849/cf4a4c6e-6ddf-4e34-ba67-0191967ae217" height = 500px>
 <img src = "https://github.com/MauryaAayush/resume/assets/143180849/eeda0f3a-2c74-43f6-b305-3c99ac4b9af4" height = 500px>
 
-<img src = "https://github.com/MauryaAayush/resume/assets/143180849/22ea1890-1396-49b6-8b95-064941814569" height = 500px>
+
+<img src = "https://github.com/MauryaAayush/resume/assets/143180849/824c9609-090c-405f-98bb-ce31c75199da" height = 500px>
+
+
+
+<img src = "https://github.com/MauryaAayush/resume/assets/143180849/c2daa83b-c6f0-4da1-829b-b82117cc3b51" height = 500px>
 
 
 
@@ -32,7 +37,6 @@
 
 
 
-<img src = "https://github.com/MauryaAayush/resume/assets/143180849/9cabc35a-f8b3-4272-920c-95e7cd0bb52b" height = 500px>
 
 
 
